@@ -1,5 +1,9 @@
 # ProjektT462
 
+- Code as tidy as you can. The more readable the better.
+- Make comments in English explaining every single detail of your code.
+- For every upload create a new branch, don't merge.
+
 Jason und Alice sind ehemalige Detektive des Nationalen Geheimdienstes von US - FBI, die nun privat arbeiten. Eines Tages erhalten sie den Fall einer verzweifelten Frau, die behauptet, dass ihr Ehemann spurlos verschwunden sei. Sie vermutet, dass er in illegale Aktivitäten verwickelt war, da er viele Schulden hatte und mysteriöse Anrufe erhielt. Jason und Alice nehmen den Fall an und beginnen mit den Ermittlungen.
 Dieser Fall wäre der erste von vielen ähnlichen Fällen von Vermisstenmeldungen, denen sie nachgehen würden.
 Hier erhält Alice einen Anruf vom Geheimdienst, der sie nach dem Besuch der Hauptquartiere mit dem Fall des "Labyrinths" konfrontiert: einem angeblichen Hindernislauf, das mit den Hunderten von Verschwinden verschuldeter Menschen pro Jahr in Verbindung stehen könnte.
