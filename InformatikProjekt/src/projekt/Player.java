@@ -48,7 +48,7 @@ public class Player {
 	
 	public void charakter(int wahl) { //a method with the parameter of an int
 		
-		if (wahl == 1) { //the int wahl ist the choice that the player made, 1 being to be Jason
+		if (wahl == 1) { //the int wahl is the choice that the player made, 1 being to be Jason
 			
 			nameSpieler = "Jason"; //name sets to Jason
 			setHp(75); //hp sets to 75
