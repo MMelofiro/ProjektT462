@@ -1,0 +1,129 @@
+package projekt;
+import java.util.Scanner;
+public class t {
+int HP;
+int ST;
+Scanner sc=new Scanner(System.in);
+public t(int HP, int ST) {
+	this.HP=HP;
+	this.ST=ST;
+}
+public int wand () {
+	System.out.println("Wand erklimmen");
+	System.out.print("Das Spiel besteht darin, auf die andere Seite eines Raums zu kommen, der durch eine 5 Meter hohe Wand, die auf der weichen Erde sich befindet, geteilt ist. ");
+	System.out.println("Die Decke des Raums ist hoch genug, um über die Wand zu springen. Es gibt noch im Raum: ein Seil, ein 3 Meter langer Bambus, und eine Schaufel.");
+	String[]wand=new String[3];//array fur alle Dinge im raum erzeugen
+	wand[0]="Seil";
+	wand[1]="Bambus";
+    wand[2]="Schaufel";
+    String n= sc.next();//die Entscheidung von dem Spieler
+    int x=0;
+    while (!n.equalsIgnoreCase(wand[2])) {//eine while Schleife wird ausgefuhrt wenn falsche Entscheidung getroffen wird.(wenn n unterschied von schaufel ist)
+    	System.out.println("Sie sind gefallen");
+    	HP=HP-10;
+    	ST=ST-10;
+     	System.out.println(HP+","+ST);
+    	if (HP>=0 &&ST>0) {//Prufen, ob alle HP oder ST verlieren sind
+    	System.out.println("Noch einmal versuchen");
+    	n=sc.next();
+    	}else {
+    		x++;
+    		System.out.println("Verlieren");
+    	break;}//Schleife abbrechen 
+    }
+    if (n.equalsIgnoreCase(wand[2])) {//wenn der Spieler Schaufel wahlt, dann fuhrt diese entscheidung aus
+    ST=ST-10;
+ 	if (HP>=0 &&ST>0) {
+ 		ST=ST+5; //Der Spieler erhalt ST und HP
+ 		HP=HP+5;
+ 	System.out.println(HP+","+ST);
+    System.out.println("Erfolgreich!");
+ 	}else {System.out.println("Verlieren");}
+    }
+    return x;
+}
+public int weg() {
+	int n=0;
+System.out.println("Zweiweg der Entscheidungen");
+System.out.println("Sie befinden sich an einer Kreuzung, an der es zwei Wege gibt. Auf der rechten ist eine Gruppe von Menschen zu sehen, die sich unterhalten, auf der linken ist ein einsamer Park sichtbar, aus dem metallische Geräusche zu hören sind." );
+System.out.println("Wohin mochten Sie gehen?");
+String e=sc.next();//die Entscheidung des Spielers
+String a="links";
+if(e.equalsIgnoreCase(a)) {//wenn der Spieler hat links gewahlt
+System.out.println("Sie finden ein Haus mit Essen und Getranke!");//Fragen, ob er Getranke oder Essen wahlt
+System.out.println("Mochten sie trinken oder essen? 1 oder 2?");
+System.out.println("1.Trinken");
+System.out.println("2.Essen");
+int d=sc.nextInt();//die Wahl des Spielers
+if (d==1) {
+ST=ST+10; //wenn er fur trinken wahlt, dann erhalt er ST
+}else if (n==2) {//else erhalt er HP
+	HP=HP+10;
+}
+}else  {System.out.println("Sie werden von der Gruppe von Menschen angegriffen.");//und rechts
+String[]v=new String[2];
+v[0]="Flucht";
+v[1]="Sich schutzen";
+System.out.println("Flucht oder sich schutzen?");
+String f= sc.next();
+if(f.equalsIgnoreCase(v[0])) {//falls der Spieler flucht, dann wahlt er links und kann noch ST oder HP erhalten
+System.out.println("Sie laufen schnell zurück zur Kreuzung und wahlen links");
+System.out.println("Sie finden ein Haus mit Essen und Getranke!");
+int d=sc.nextInt();//die Wahl des Spielers
+if (d==1) {
+ST=ST+10; //wenn er fur trinken wahlt, dann erhalt er ST
+}else if (n==2) {//else erhalt er HP
+	HP=HP+10;
+}else {//sonst kann er die herausforderung uberwinden, aber verliert HP
+HP=HP-10;
+if (HP<=0) {
+	n++;
+	System.out.println("Sie haben alle Lebenspunkte verloren.");}
+System.out.println("Sie gehen weiter, verlieren jedoch " + HP + " HP.");
+
+}	
+}
+//Ausgabe der aktuellen HP und ST
+System.out.println("Aktueller Status:");
+System.out.println("HP: " + HP);
+System.out.println("ST: " + ST);
+}
+return n;
+}
+public int Seilschwingen() {
+	int n1=0;
+System.out.println("Seilschwingen");	       
+	 double hohe = Math.random()* 100+1; // Zufällige Entfernung zwischen 1 und 100 Metern
+     double g = 9.8; // Gravitationskonstante 
+     System.out.println("Um die andere Seite zu erreichen, müssen Sie das Seil mit der richtigen Geschwindigkeit schwingen. Die Gravitationskonstante ist 9.8m/s2. Die Hohe ist "+hohe+". v=2h/g=");
+     // Spielereingabe für die Geschwindigkeit
+     System.out.print("Geben Sie die erforderliche Geschwindigkeit zum Schwingen des Seils ein (in m/s): ");
+     double vsp = sc.nextDouble();
+     double v = 2*hohe/g; //berechnung die tatsachliche Geschwindigkeit
+while (vsp < v) { //2 ergebnisse vergleichen
+    System.out.println("Die Geschwindigkeit ist nicht ausreichend. Das Seil schwingt nicht weit genug.");
+    HP=HP-15;
+    ST=ST-15;
+    System.out.println("HP="+HP+", ST= "+ST);
+    if (HP<=0 ||ST<0) {
+    	n1++;
+    	System.out.println("Sie haben alle Lebenspunkte verloren.");
+    	break;//Schleife abbrechen 
+    }else {
+    	System.out.println("Noch einmal versuchen");
+    	vsp=sc.nextDouble();//wenn HP und ST bleiben noch ubrig, dann kann der Spier noch einmal entscheiden
+    }
+    }
+if (vsp>=v) {//wenn die Geschwindigkeit ausreichend ist, dann 
+System.out.println("Herzlichen Glückwunsch! Sie haben die andere Seite erreicht.");
+ST=15;
+System.out.println(HP+","+ST);
+}
+return n1;
+}
+public String retten() {
+System.out.println("Sie werden verfolgt. Eine Person ist gestolpert! Mochten Sie diesem Mensch helfen?");
+String gerettet = sc.next();
+return gerettet;
+}
+}
