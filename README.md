@@ -7,6 +7,7 @@
 - For every upload create a new branch, don't merge.
 - Declare methods and objects/instanecs should be declared starting with a lowercase letter. Ex.: private void **_berechneFlaeche_**(); Einfuehrung **_einfuehrung_** = new Einfuehrung();
 - It's reccomended to declare variables starting with a lowercase letter too. Ex.: int **_nummer_**;
+- Use descriptive names for variables, objects, and classes.
 
 Jason und Alice sind ehemalige Detektive des Nationalen Geheimdienstes von US - FBI, die nun privat arbeiten. Eines Tages erhalten sie den Fall einer verzweifelten Frau, die behauptet, dass ihr Ehemann spurlos verschwunden sei. Sie vermutet, dass er in illegale Aktivitäten verwickelt war, da er viele Schulden hatte und mysteriöse Anrufe erhielt. Jason und Alice nehmen den Fall an und beginnen mit den Ermittlungen.
 Dieser Fall wäre der erste von vielen ähnlichen Fällen von Vermisstenmeldungen, denen sie nachgehen würden.
