@@ -24,7 +24,7 @@ public class Input {
 
 	}
 
-	public int scannerInt(String frage, int min, int max) { // method for every decision we will give. You can see an
+	public int scannerInt(String frage, int max) { // method for every decision we will give. You can see an
 															// example of how I used this method in the class
 															// SchwierigCharakter and Player
 		// min is always 1, max is the number of decision the player can make. This is

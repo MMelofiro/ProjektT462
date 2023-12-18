@@ -19,12 +19,20 @@ public class Hauptklasse {
 	
 	public static void main(String[] args) {
 		
+		Player player = new Player();
+		
 		Einfuehrung einfuehrung = new Einfuehrung(); //introduction instance
-		CharacterSelection charak = new CharacterSelection(); // Difficulty level and charakter selection
+		CharacterSelection charak = new CharacterSelection(); // Charakter selection
+		SwierigkeitsCharachter schwierig = new SwierigkeitsCharachter();
+		Spiel01Wand spiel01 = new Spiel01Wand();
 		
 		einfuehrung.intro();
 
-		charak.charakterAuswaehlen();
+		charak.charakterAuswaehlen(player);
+		
+		schwierig.difficulty(player);
+		
+		spiel01.wand(player);
 
 	}
 

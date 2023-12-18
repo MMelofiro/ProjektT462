@@ -3,9 +3,8 @@ package projekt;
 public class SwierigkeitsCharachter {
 	
 	Input input = new Input();
-	Player player = new Player();
 	
-	public void difficulty() {
+	public void difficulty(Player player) {
 
 		System.out.println("Schwierigkeitsgrad: ");
 		
