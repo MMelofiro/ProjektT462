@@ -1,6 +1,6 @@
 # ProjektT462
 
-### Each class function will be explained at the start of it, as well as the methods inside of it and what they do and used for.
+### Each class will be explained at the start of it, as well as the methods inside the class; what they do and what are they used for.
 
 - Code as tidy as you can. The more readable the better.
 - Make detailed comments in English explaining your code.
