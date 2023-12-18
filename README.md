@@ -1,9 +1,12 @@
 # ProjektT462
 
+## Each class function will be explained at the start of it, as well as the methods inside of it and what they do and used for.
+
 - Code as tidy as you can. The more readable the better.
 - Make comments in English explaining every single detail of your code.
 - For every upload create a new branch, don't merge.
-- Declare variables and methods with low caps at the first letter. Ex.: int geldSparen; private void berechneFlaeche.
+- Declare methods and objects/instanecs should be declared starting with a lowercase letter. Ex.: private void **_berechneFlaeche_**(); Einfuehrung **_einfuehrung_** = new Einfuehrung();
+- It's reccomended to declare variables starting with a lowercase letter too. Ex.: int **_nummer_**;
 
 Jason und Alice sind ehemalige Detektive des Nationalen Geheimdienstes von US - FBI, die nun privat arbeiten. Eines Tages erhalten sie den Fall einer verzweifelten Frau, die behauptet, dass ihr Ehemann spurlos verschwunden sei. Sie vermutet, dass er in illegale Aktivitäten verwickelt war, da er viele Schulden hatte und mysteriöse Anrufe erhielt. Jason und Alice nehmen den Fall an und beginnen mit den Ermittlungen.
 Dieser Fall wäre der erste von vielen ähnlichen Fällen von Vermisstenmeldungen, denen sie nachgehen würden.
