@@ -3,6 +3,7 @@
 - Code as tidy as you can. The more readable the better.
 - Make comments in English explaining every single detail of your code.
 - For every upload create a new branch, don't merge.
+- Declare variables and methods with low caps at the first letter. Ex.: int geldSparen; private void berechneFlaeche.
 
 Jason und Alice sind ehemalige Detektive des Nationalen Geheimdienstes von US - FBI, die nun privat arbeiten. Eines Tages erhalten sie den Fall einer verzweifelten Frau, die behauptet, dass ihr Ehemann spurlos verschwunden sei. Sie vermutet, dass er in illegale Aktivitäten verwickelt war, da er viele Schulden hatte und mysteriöse Anrufe erhielt. Jason und Alice nehmen den Fall an und beginnen mit den Ermittlungen.
 Dieser Fall wäre der erste von vielen ähnlichen Fällen von Vermisstenmeldungen, denen sie nachgehen würden.
