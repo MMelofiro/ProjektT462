@@ -1,0 +1,43 @@
+package projekt;
+
+public class Spiel04 {
+	Input input=new Input();
+	public boolean weg(Player player) {
+	System.out.println("Zweiweg der Entscheidungen");
+	System.out.println("Sie befinden sich an einer Kreuzung, an der es zwei Wege gibt. Auf der rechten ist eine Gruppe von Menschen zu sehen, die sich unterhalten, auf der linken ist ein einsamer Park sichtbar, aus dem metallische Geräusche zu hören sind." );
+	System.out.println("Wohin mochten Sie gehen?");
+	int nummer =input.scannerInt("1,links \n 2, rechts",1,2);
+	if(nummer==1) {//wenn der Spieler hat links gewahlt
+	System.out.println("Sie finden ein Haus mit Essen und Getranke!");//Fragen, ob er Getranke oder Essen wahlt
+	System.out.println("Mochten sie trinken oder essen? 1 oder 2?");
+	int nummer1 =input.scannerInt("1,Trinken \n 2, Essen",1,2);
+	if (nummer1==1) {
+		player.setSt(player.getSt() + 10); //wenn er fur trinken wahlt, dann erhalt er ST
+	}else if (nummer1==2) {//else erhalt er HP
+		player.setHp(player.getHp() + 10);
+	}
+	}else{System.out.println("Sie werden von der Gruppe von Menschen angegriffen.");//und rechts
+	System.out.println("Flucht oder sich schutzen?");
+	int nummer2 =input.scannerInt("1,Flucht \n 2, Sich schutzen",1,2);
+	if(nummer2==1) {//falls der Spieler flucht, dann wahlt er links und kann noch ST oder HP erhalten
+	System.out.println("Sie laufen schnell zurück zur Kreuzung und wahlen links");
+	System.out.println("Sie finden ein Haus mit Essen und Getranke!");
+	int nummer3=input.scannerInt("1,Trinken \n 2, Essen",1,2);//die Wahl des Spielers
+	if (nummer3==1) {
+		player.setSt(player.getSt() + 10);  //wenn er fur trinken wahlt, dann erhalt er ST
+	}else if (nummer3==2) {//else erhalt er HP
+		player.setHp(player.getHp() + 10);
+	}else {//sonst kann er die herausforderung uberwinden, aber verliert HP
+		player.setHp(player.getHp() - 10);
+	if (player.getHp()<=0) {
+		verloren.setVerloren(true);
+		System.out.println("Sie haben alle Lebenspunkte verloren.");}
+	System.out.println("Sie gehen weiter, verlieren jedoch " + player.getHp() + " HP.");
+	}	
+	}
+	//Ausgabe der aktuellen HP und ST
+Status.Statuszeigen(player);
+	}
+	return verloren.getVerloren();
+	}
+}
