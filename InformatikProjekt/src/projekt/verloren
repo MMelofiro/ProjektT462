@@ -1,0 +1,16 @@
+package projekt;
+
+public class verloren {
+private static boolean isverloren;
+
+public static boolean getVerloren() {
+	return isverloren;
+}
+
+public static void setVerloren(boolean verloren) {
+	isverloren=verloren;
+}
+public void setVerloren1() {
+	setVerloren(false);
+}
+}
