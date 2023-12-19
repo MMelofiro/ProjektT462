@@ -1,0 +1,10 @@
+package projekt;
+
+public class Ende {
+public void ende1() {
+	System.out.println("Glückwunsch! Sie haben alle Herausforderungen des Spiels gemeistert und die Organisation, die das Spiel kontrolliert, gefunden!");
+}
+public void ende2() {
+	System.out.println("Sie haben alle Herausforderungen gemeistert, aber die Person, die Sie gerettet haben, ist Mitglied der Organisation. Sie rden gefangen genommen und getotet");
+}
+}
