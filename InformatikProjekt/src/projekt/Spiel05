@@ -1,0 +1,35 @@
+package projekt;
+import java.util.Scanner;
+public class Spiel05 {
+	Scanner sc= new Scanner(System.in);
+	public boolean Seilschwingen(Player player) {
+	System.out.println("Seilschwingen");	       
+		 double hohe = Math.random()* 100+1; // Zufällige Entfernung zwischen 1 und 100 Metern
+	     double g = 9.8; // Gravitationskonstante 
+	     System.out.println("Um die andere Seite zu erreichen, müssen Sie das Seil mit der richtigen Geschwindigkeit schwingen. Die Gravitationskonstante ist 9.8m/s2. Die Hohe ist "+hohe+". v=2h/g=");
+	     // Spielereingabe für die Geschwindigkeit
+	     System.out.print("Geben Sie die erforderliche Geschwindigkeit zum Schwingen des Seils ein (in m/s): ");
+	     double vsp = sc.nextDouble();
+	     double v = 2*hohe/g; //berechnung die tatsachliche Geschwindigkeit
+	while (vsp < v) { //2 ergebnisse vergleichen
+	    System.out.println("Die Geschwindigkeit ist nicht ausreichend. Das Seil schwingt nicht weit genug.");
+	    player.setHp(player.getHp() - 15);
+	    player.setSt(player.getSt() - 15);
+	    System.out.println("HP="+player.getHp()+", ST= "+player.getSt());
+	    if (player.getHp()<=0 ||player.getSt()<0) {
+	    	verloren.setVerloren(true);
+	    	System.out.println("Sie haben alle Lebenspunkte verloren.");
+	    	break;//Schleife abbrechen 
+	    }else {
+	    	System.out.println("Noch einmal versuchen");
+	    	vsp=sc.nextDouble();//wenn HP und ST bleiben noch ubrig, dann kann der Spier noch einmal entscheiden
+	    }
+	    }
+	if (vsp>=v) {//wenn die Geschwindigkeit ausreichend ist, dann 
+	System.out.println("Herzlichen Glückwunsch! Sie haben die andere Seite erreicht.");
+	player.setSt(15);
+Status.Statuszeigen(player);
+	}
+	return verloren.getVerloren();
+	}
+}
