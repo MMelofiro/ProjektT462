@@ -19,13 +19,13 @@ public class Spiel01 {
 				System.out.println("Sie sind gefallen");
 				player.setHp(player.getHp() - 10);
 				player.setSt(player.getSt() - 10);
-				Status.Statuszeigen(player);
+				player.statusZeigen();
 
 				if (player.getHp() > 0 && player.getSt() > 0) {// Prufen, ob alle HP oder ST verlieren sind
 					System.out.println("Noch einmal versuchen");
 					nummer = input.scannerInt("1. Seil\n2. Bambus\n3. Schaufel",1,3);
 				} else {
-					verloren.setVerloren(true);
+					player.setVerloren(true);
 					System.out.println("Sie haben verloren.");
 					break;
 				} // Schleife abbrechen
@@ -36,13 +36,13 @@ public class Spiel01 {
 				if (player.getHp() > 0 && player.getSt() > 0) {
 					player.setSt(player.getSt() + 5); // Der Spieler erhalt ST und HP
 					player.setHp(player.getHp() + 5);
-					Status.Statuszeigen(player);
+					player.statusZeigen();
 					System.out.println("Erfolgreich!");
 				} else {
-					verloren.setVerloren(true);
+					player.setVerloren(true);
 					System.out.println("Sie haben verloren");
 				}
 			}
-			return verloren.getVerloren();
+			return player.getVerloren();
 		}
 }
