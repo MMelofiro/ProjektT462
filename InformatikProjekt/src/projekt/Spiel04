@@ -30,14 +30,14 @@ public class Spiel04 {
 	}else {//sonst kann er die herausforderung uberwinden, aber verliert HP
 		player.setHp(player.getHp() - 10);
 	if (player.getHp()<=0) {
-		verloren.setVerloren(true);
+		player.setVerloren(true);
 		System.out.println("Sie haben alle Lebenspunkte verloren.");}
 	System.out.println("Sie gehen weiter, verlieren jedoch " + player.getHp() + " HP.");
 	}	
 	}
 	//Ausgabe der aktuellen HP und ST
-Status.Statuszeigen(player);
+    player.statusZeigen();
 	}
-	return verloren.getVerloren();
+	return player.getVerloren();
 	}
 }
