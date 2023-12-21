@@ -17,7 +17,7 @@ public class Spiel05 {
 	    player.setSt(player.getSt() - 15);
 	    System.out.println("HP="+player.getHp()+", ST= "+player.getSt());
 	    if (player.getHp()<=0 ||player.getSt()<0) {
-	    	verloren.setVerloren(true);
+	    	player.setVerloren(true);
 	    	System.out.println("Sie haben alle Lebenspunkte verloren.");
 	    	break;//Schleife abbrechen 
 	    }else {
@@ -28,8 +28,8 @@ public class Spiel05 {
 	if (vsp>=v) {//wenn die Geschwindigkeit ausreichend ist, dann 
 	System.out.println("Herzlichen Glückwunsch! Sie haben die andere Seite erreicht.");
 	player.setSt(15);
-Status.Statuszeigen(player);
+player.statusZeigen();
 	}
-	return verloren.getVerloren();
+	return player.getVerloren();
 	}
 }
