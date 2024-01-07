@@ -16,7 +16,8 @@ public class Spiel05Seil { // Phuong Uyen To
 		hohe = hohe / 100; // these last 3 lines round hohe to 2 Nachkommastellen.
 		
 		double g = 9.8; // Gravitationskonstante
-		
+		System.out.println("Du wirst von einem Fluss aufgehalten. Um fortzufahren, musst  das dortige Seil nutzen, um auf die andere Seite zu schwingen.");
+
 		System.out.println(
 				"Um die andere Seite zu erreichen, müssen Sie das Seil mit der richtigen "
 				+ "Geschwindigkeit schwingen. Die Gravitationskonstante ist 9.8m/s^2. Die Höhe ist "
@@ -35,21 +36,21 @@ public class Spiel05Seil { // Phuong Uyen To
 		while (vSpieler < v) { // 2 ergebnisse vergleichen
 		
 			System.out.println(
-					"Die Geschwindigkeit ist nicht ausreichend. Das Seil schwingt nicht weit genug.");
+					"Die Geschwindigkeit ist nicht ausreichend. Das Seil schwingt nicht weit genug. Du bist hinterfallen.");
 																									
 			player.setHp(player.getHp() - 50);
 			player.setSt(player.getSt() - 50);
 			player.statusZeigen();
 			
 			if (player.getHp() <= 0 || player.getSt() < 0) {
-				
+				System.out.println("Sie haben alle Lebenspunkte verloren.");
 				Seilschwingen(player);
 				
 				break;// Schleife abbrechen
 			
 			} else {
 			
-				System.out.println("Noch einmal versuchen");
+				System.out.println("Noch einmal versuchen.");
 				
 				vSpieler = input.scannerDouble(
 						"Geben Sie die erforderliche Geschwindigkeit zum Schwingen des Seils ein (in m/s): ");// wenn HP und ST bleiben noch ubrig, dann kann der Spier noch einmal
@@ -65,10 +66,9 @@ public class Spiel05Seil { // Phuong Uyen To
 			if (player.getSt() > 15) {
 				
 				player.setSt(15);
-				player.statusZeigen();
 			
 			}
-			
+			player.statusZeigen();
 		}
 	
 	}
