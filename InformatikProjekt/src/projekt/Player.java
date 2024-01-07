@@ -8,8 +8,6 @@ public class Player {
 	private String mitspieler; //Who isn't playing. If player selects Allice, then mitspieler is Jason, and viceversa.
 	private boolean gerettet; //Boolean for the ending
 	private boolean schwer; //If true, then Schachspiel wird gespielt
-	private boolean verloren;
-	//create a method to know in which game the player is, so that when he fails in one game, he returns to the last one he played, with his previous stats and decisions saved.
 	
 	//-----------------------Konstruktor-----------------------
 	
@@ -17,7 +15,6 @@ public class Player {
 		
 		hp = 100; //Initial values
 		st = 100;
-		verloren = false;
 
 	}
 	
@@ -47,24 +44,14 @@ public class Player {
 		return schwer;
 	}
 	
-	public boolean getVerloren() {
-		return verloren;
-	}
-	
 	//-----------------------Setters-----------------------
 	
 	public void setHp(int health) { //this method will be used to set the hp of the player
 		hp = health;				//to a new value
-		if (hp <= 0) {
-			System.out.println("Du hast verloren");
-		}
 	}
 	
 	public void setSt(int stamina) { //this method will be used to set the stamina of the player
 		st = stamina;				 //to a new value
-		if (st <= 0) {
-			System.out.println("Du hast verloren");
-		}
 	}
 	
 	public void setGerettet(boolean gt) {
@@ -73,10 +60,6 @@ public class Player {
 	
 	public void setSchwer(boolean schw) {
 		schwer = schw;
-	}
-	
-	public void setVerloren(boolean lost) {
-		verloren = lost;
 	}
 	
 	//-----------------------Player selection-----------------------
@@ -107,9 +90,9 @@ public class Player {
 	
 	public void schwierigkeit(int wahl) { //a method with the parameter of an int
 		
-		if (wahl == 1) { //the int wahl is the choice that the player made
+		if (wahl == 1) { //int wahl is the choice that the player made
 			
-			setSchwer(false);
+			setSchwer(false); //
 			
 			System.out.println("Schwierigkeitsgrad zu Normal gestellt");
 			
@@ -125,14 +108,12 @@ public class Player {
 	
 	//-----------------------Show Stats-----------------------
 	
-	public void statusZeigen() {
+	public void status() {
 		
 		System.out.println("Lebenspunkte: " + getHp());
 		
-		System.out.println("Stamina: " + getSt());
+		System.out.println("Stamina: " + getSt() + "\n");
 		
 	}
-	
-	//Check if player lost
 
 }

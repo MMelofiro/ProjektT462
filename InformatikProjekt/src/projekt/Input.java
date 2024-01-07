@@ -8,8 +8,8 @@ package projekt;
  * What is inside this class?
  * 	scannerInt method:
  * 		Used to ask the player for an input. Verifies that the input is an int, and returns the input.
- * 	closeScanner():
- * 		Method used to close the scanner. Should be used after every use of the scannerInt() method.
+ * 	closeScanner:
+ * 		
  */
 
 import java.util.Scanner;

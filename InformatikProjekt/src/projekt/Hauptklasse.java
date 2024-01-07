@@ -16,23 +16,17 @@ package projekt;
  */
 
 public class Hauptklasse {
-	
+
 	public static void main(String[] args) {
-		
-		Player player = new Player();
-		
-		Einfuehrung einfuehrung = new Einfuehrung(); //introduction instance
-		CharacterSelection charak = new CharacterSelection(); // Charakter selection
-		SwierigkeitsCharachter schwierig = new SwierigkeitsCharachter();
-		Spiel01Wand spiel01 = new Spiel01Wand();
-		
+
+		Einfuehrung einfuehrung = new Einfuehrung(); // introduction instance
+		CharacterSelection selection = new CharacterSelection(); // Difficulty level and character selection
+		SchwierigkeitsCharakter schwierigkeit = new SchwierigkeitsCharakter();
+
 		einfuehrung.intro();
 
-		charak.charakterAuswaehlen(player);
-		
-		schwierig.difficulty(player);
-		
-		spiel01.wand(player);
+		selection.charakterAuswaehlen();
+		schwierigkeit.difficulty();
 
 	}
 
