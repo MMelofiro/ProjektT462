@@ -75,7 +75,7 @@ public class Hauptklasse { // Marcello Melofiro
 		
 		if (player.getGerettet() == true) {
 			
-			// Ende 2 Emir Sultanov
+			// Ende 2 Phuong Uyen To
 			ende.ende2();
 			
 		} else {
