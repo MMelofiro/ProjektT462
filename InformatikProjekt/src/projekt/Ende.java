@@ -10,7 +10,7 @@ public class Ende {
 																								
 	}
 	
-	public void ende2() { // Emir Sultanov
+	public void ende2() { // Phuong Uyen To
 		
 		System.out.println(
 				"Sie haben alle Herausforderungen gemeistert, aber die Person, die Sie gerettet\n"
