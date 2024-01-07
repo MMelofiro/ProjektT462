@@ -16,7 +16,7 @@ public class Spiel05Seil { // Phuong Uyen To
 		hohe = hohe / 100; // these last 3 lines round hohe to 2 Nachkommastellen.
 		
 		double g = 9.8; // Gravitationskonstante
-		System.out.println("Du wirst von einem Fluss aufgehalten. Um fortzufahren, musst  das dortige Seil nutzen, um auf die andere Seite zu schwingen.");
+		System.out.println("Sie werden von einem Fluss aufgehalten. Um fortzufahren, mussen Sie ein dortiges Seil nutzen, um auf die andere Seite zu schwingen.");
 
 		System.out.println(
 				"Um die andere Seite zu erreichen, müssen Sie das Seil mit der richtigen "
