@@ -1,0 +1,12 @@
+package projekt;
+
+public class Retten {
+	Input input=new Input();
+	public void retten(Player player) {
+		System.out.println("Sie werden verfolgt. Eine Person ist gestolpert! Mochten Sie diesem Mensch helfen?");
+        int nummer6=input.scannerInt("1. Ja\n2. Nein\n", 1, 2);
+		if (nummer6==1) {
+			player.setGerettet(true);
+		}else player.setGerettet(false);
+		}
+}
