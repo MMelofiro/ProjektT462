@@ -29,18 +29,17 @@ public class Spiel01Wand { // Phuong Uyen To
 		System.out.println("und"+mitspieler"+ schlägt die Verwendung von Bambus vor");
 		input.next();
 																								
-		int nummer = input.scannerInt("1. Seil\n2. Bambus\n3. Schaufel", 3);
+		int nummer = input.scannerInt("1. Seil\n2. Bambus\n3. Schaufel", 3); //der Nummer wird von dem Spieler gegeben mithilfe der method scannerInt 
 
-		while (nummer != 3) { // eine while Schleife wird ausgefuhrt wenn falsche Entscheidung getroffen
-																	// wird.(wenn nummer unterschiedlich von schaufel(3) ist)
+		while (nummer != 3) { // eine while Schleife wird ausgefuhrt wenn falsche Entscheidung getroffen wird.(wenn nummer unterschiedlich von schaufel(3) ist)
 			System.out.println("Sie sind gefallen");
 			
 			input.fixNext();
 			input.next();
 			
-			player.setHp(player.getHp() - 10);
-			player.setSt(player.getSt() - 10);
-			player.statusZeigen();
+			player.setHp(player.getHp() - 10);//Hp reduziert werden 
+			player.setSt(player.getSt() - 10);//ST reduziert werden
+			player.statusZeigen(); //ST und Hp anzeigen durch die Method statusZeigen in Player-Klasse
 			
 			input.next();
 
@@ -48,7 +47,7 @@ public class Spiel01Wand { // Phuong Uyen To
 				
 				System.out.println("Noch einmal versuchen");
 				
-				nummer = input.scannerInt("1. Seil\n2. Bambus\n3. Schaufel", 3);
+				nummer = input.scannerInt("1. Seil\n2. Bambus\n3. Schaufel", 3); //noch einmal die Antwort geben
 				
 			} else {
 				
@@ -63,7 +62,7 @@ public class Spiel01Wand { // Phuong Uyen To
 			
 			player.setSt(player.getSt() - 10);
 			
-			if ((player.getHp() > 0) && (player.getSt() > 0)) {
+			if ((player.getHp() > 0) && (player.getSt() > 0)) { //uberprufen, ob der Spieler noch HP und ST hat
 				
 				System.out.println("Erfolgreich! Sie sind an der Tür, die zum nächsten Spiel führt, angekommen.");
 				
