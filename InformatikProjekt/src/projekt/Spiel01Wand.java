@@ -21,11 +21,12 @@ public class Spiel01Wand { // Phuong Uyen To
 				+ "eine 5 Meter hohe Wand, die auf der weichen Erde sich befindet, geteilt ist. ");
 		
 		input.next();
-																								
+		System.out.println("Sie schauen sich um und bemerken zwei Details.");																					
 		System.out.println(
 				"Die Decke des Raums ist hoch genug, um über die Wand zu springen. Es gibt noch "
 				+ "im Raum: ein Seil, ein 3 Meter langer Bambus, und eine Schaufel.");
-		
+		System.out.print("Sie besprechen mit "+mitspieler+", wie Sie Herausforderungen meistern können,");
+		System.out.println("und"+mitspieler"+ schlägt die Verwendung von Bambus vor");
 		input.next();
 																								
 		int nummer = input.scannerInt("1. Seil\n2. Bambus\n3. Schaufel", 3);
@@ -64,7 +65,7 @@ public class Spiel01Wand { // Phuong Uyen To
 			
 			if ((player.getHp() > 0) && (player.getSt() > 0)) {
 				
-				System.out.println("Erfolgreich!");
+				System.out.println("Erfolgreich! Sie sind an der Tür, die zum nächsten Spiel führt, angekommen.");
 				
 				player.setSt(player.getSt() + 5); // Der Spieler erhalt ST und HP
 				player.setHp(player.getHp() + 5);
