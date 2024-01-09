@@ -10,7 +10,7 @@ public class Spiel04Weg {
 		
 		System.out.println("Zweiweg der Entscheidungen");
 		input.next(); 
-		
+		//Gesprach
 		System.out.println("Sie haben die Hälfte des Spiels abgeschlossen. Während Sie in den nächsten Raum gehen, spüren Sie, dass die Anzahl der Spieler deutlich zurückgegangen ist.");
 		System.out.println("Sie fragen "+player.getMitspieler()+", ob dies die Arbeit der dahinter stehenden Organisation ist.");
 		input.next();
@@ -21,20 +21,21 @@ public class Spiel04Weg {
 		System.out.println("Sie sagen: Du hast Recht. Dann müssen wir vorsichtig mit anderen Menschen sein.");
 		input.next();
 		
+		//Das Spiel beginnt
 		System.out.print("Sie gehen weiter, bis sich die Straße in zwei Wege teilt. Auf der rechten ist eine Gruppe von Menschen zu sehen, ");
 		System.out.println("die sich unterhalten, auf der linken ist ein einsamer Park sichtbar, aus dem metallische Geräusche zu hören sind.");
 																								
 		System.out.println("Wohin möchten Sie gehen?");
 		
-		int nummer = input.scannerInt("1.links \n2. rechts", 2);
+		int nummer = input.scannerInt("1.links \n2. rechts", 2);//Wahlen, welche richtung der spieler gehen will
 		
-		if (nummer == 1) {// wenn der Spieler hat links gewahlt
+		if (nummer == 1) {// wenn der Spieler links gewahlt hat
 			
 			System.out.println("Sie finden ein Haus mit Essen und Getränke!");// Fragen, ob er Getranke oder Essen wahlt
 			
 			System.out.println("Möchten sie trinken oder essen? 1 oder 2?");
 			
-			int nummer1 = input.scannerInt("1. Trinken \n2. Essen", 2);
+			int nummer1 = input.scannerInt("1. Trinken \n2. Essen", 2); //entscheiden, entweder HP oder ST nehmen
 			
 			if (nummer1 == 1) {
 				System.out.println("Sie beschließen, Wasser zu trinken, nachdem Sie sichergestellt haben, dass es nicht giftig ist.");
@@ -50,16 +51,16 @@ public class Spiel04Weg {
 				
 			}
 			
-		} else if (nummer == 2) {
+		} else if (nummer == 2) { // falls und rechts gewahlt wird
 			
-			System.out.println("Sie werden von der Gruppe von Menschen angegriffen.");// und rechts
+			System.out.println("Sie werden von der Gruppe von Menschen angegriffen.");
 			
 			System.out.println("Mochten Sie fluchten oder sich schutzen und weiter gehen?");
 			
 			int nummer2 = input.scannerInt("1.Fluchten \n2. Sich schutzen und weiter gehen", 2);
 			
-			if (nummer2 == 1) {// falls der Spieler flucht, dann wahlt er links und kann noch ST oder HP
-								// erhalten
+			if (nummer2 == 1) {// falls der Spieler flucht, dann wahlt er links und kann noch ST oder HP erhalten
+				
 				System.out.println("Sie laufen schnell zurück zur Kreuzung und gehen nach links");
 				
 				System.out.println("Sie finden ein Haus mit Essen und Getranke!");
@@ -70,7 +71,6 @@ public class Spiel04Weg {
 					System.out.println("Sie beschließen, Wasser zu trinken, nachdem Sie sichergestellt haben, dass es nicht giftig ist.");
 					input.next();
 					System.out.println(" Nach dem Trinken stellen Sie 10 ST wieder her!");
-
 					player.setSt(player.getSt() + 10); // wenn er fur trinken wahlt, dann erhalt er ST
 					
 				} else if (nummer3 == 2) {// else erhalt er HP
@@ -80,7 +80,7 @@ public class Spiel04Weg {
 					player.setHp(player.getHp() + 10);
 					
 				}
-				else {//sonst kann er die herausforderung uberwinden, aber verliert HP
+				else {//sonst kann er auch die herausforderung uberwinden, aber verliert HP
 	                  	player.setHp(player.getHp() - 10);
 	                	if (player.getHp()<=0) {
 					System.out.println("Sie haben alle Lebenspunkte verloren.");
