@@ -30,17 +30,18 @@ public class Hauptklasse { // Marcello Melofiro
 		//Spiel03 instance
 		Spiel04Weg weg = new Spiel04Weg();
 		Spiel05Seil spiel05 = new Spiel05Seil();
+		//Spiel Retten instance 
 		//Spiel06 instance
 		//Spiel07 instance
 		Ende ende = new Ende();
 		
-		//Intro
+		//Intro Marcello Melofiro
 		einfuehrung.intro();
 
-		// Character selection
+		// Character selection Marcello Melofiro
 		charak.charakterAuswaehlen(player);
 		
-		// Difficulty
+		// Difficulty Marcello Melofiro
 		schwierig.difficulty(player);
 			player.save(); // saves hp and st values of the start, if player looses in game 
 		
@@ -61,6 +62,10 @@ public class Hauptklasse { // Marcello Melofiro
 			
 		// Spiel 05 Phuong Uyen To
 		spiel05.Seilschwingen(player);
+			player.save();
+			
+		// Spiel Retten Phuong Uyen To
+		//retten.retten();
 			player.save();
 			
 		// Spiel 06 Emir Sultanov

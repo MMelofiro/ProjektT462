@@ -44,7 +44,7 @@ public class Input { //Marcello Melofiro
 
 		while (nummer < 1 || nummer > max) { // repeat while nummer is out of range
 
-			if (scanner.hasNextDouble()) { // if the next input is an int, then nummer changes as that new int
+			if (scanner.hasNextDouble()) { // if the next input is an int, then true
 
 				nummer = scanner.nextInt(); // a new value for nummer will be asked, this will always happen, at least
 											// once

@@ -25,8 +25,8 @@ public class Spiel01Wand { // Phuong Uyen To
 		System.out.println(
 				"Die Decke des Raums ist hoch genug, um über die Wand zu springen. Es gibt noch "
 				+ "im Raum: ein Seil, ein 3 Meter langer Bambus, und eine Schaufel.");
-		System.out.print("Sie besprechen mit "+mitspieler+", wie Sie Herausforderungen meistern können,");
-		System.out.println("und"+mitspieler"+ schlägt die Verwendung von Bambus vor");
+		System.out.print("Sie besprechen mit "+ player.getMitspieler() +", wie Sie Herausforderungen meistern können,");
+		System.out.println("und"+ player.getMitspieler() + "schlägt die Verwendung von Bambus vor");
 		input.next();
 																								
 		int nummer = input.scannerInt("1. Seil\n2. Bambus\n3. Schaufel", 3); //der Nummer wird von dem Spieler gegeben mithilfe der method scannerInt 
