@@ -6,8 +6,8 @@ public class Retten {
 		System.out.println("Gerade als Sie die andere erreichen, hören Sie von hinten einen Ruf: „Hilf mir!“");
 		System.out.println("Als Sie sich umdrehen, realisieren Sie, dass der Schrei von "+mitspieler+" stammt.");
 		System.out.println("Es scheint, als ob "+ player.getMitspieler()+" nicht mit genug Kraft sprang und kurz davor , von der Klippe zu fallen.");
-		System.out.println("Sie sind jetzt sehr müde nach 5 Spielen, aber vielleicht können Sie diese Person retten.");
-		System.out.println("Möchten Sie"+player.getMitspieler()+"retten?");
+		System.out.println("Sie sind jetzt sehr müde nach 5 Spielen, aber vielleicht können Sie "+player.getMitspieler()+" retten.");
+		System.out.println("Möchten Sie "+player.getMitspieler()+" retten?");
         int nummer6=input.scannerInt("1. Ja\n2. Nein\n", 1, 2); 
 		if (nummer6==1) {
 			player.setGerettet(true);
