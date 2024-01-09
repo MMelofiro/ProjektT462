@@ -9,13 +9,8 @@ public class Spiel05Seil { // Phuong Uyen To
 		player.recover();
 		
 		System.out.println("Seilschwingen");
-		
-		double hohe = Math.random() * 100 + 1; // Zufällige Entfernung zwischen 1 und 100 Metern
-		hohe = hohe * 100;
-		hohe = Math.round(hohe);
-		hohe = hohe / 100; // these last 3 lines round hohe to 2 Nachkommastellen.
-		double g = 9.8; // Gravitationskonstante
-		
+
+		//Anweisung
 		System.out.println("Nach der kurzen Erholung in letzte Herausforderung, gehen Sie zu dem Ort, an dem die 5. Herausforderung stattfindet");
 		System.out.println(" Dieses Zimmer ist wie ein tropischer Wald gestaltet");
 		input.next();
@@ -26,18 +21,24 @@ public class Spiel05Seil { // Phuong Uyen To
 		input.next();
 		System.out.println("Sie verstehen sofort, dass Sie ein dortiges Seil nutzen müssen, um auf die andere Seite zu schwingen.");
 
+		// notwendige Variable deklariert 
+		double hohe = Math.random() * 100 + 1; // Zufällige Entfernung zwischen 1 und 100 Metern
+		hohe = hohe * 100;
+		hohe = Math.round(hohe);
+		hohe = hohe / 100; // Diese letzten 3 Zeilen runden Zahlen auf 2 Dezimalstellen.
+		double g = 9.8; // Gravitationskonstante
+
+		double v = (2 * hohe) / g; // berechnung die tatsachliche Geschwindigkeit
+		v = v * 100;
+		v = Math.round(v);
+		v = v / 100; // Diese letzten 3 Zeilen runden Zahlen auf 2 Dezimalstellen.
+		
 		System.out.println(
 				"Um die andere Seite zu erreichen, müssen Sie das Seil mit der richtigen "
 				+ "Geschwindigkeit schwingen. Die Gravitationskonstante ist 9.8m/s^2. Die Höhe ist "
 				+ hohe + ". v = 2h/g =");
 																								
-		// Spielereingabe für die Geschwindigkeit
-		
-		double v = (2 * hohe) / g; // berechnung die tatsachliche Geschwindigkeit
-		v = v * 100;
-		v = Math.round(v);
-		v = v / 100; // these last 3 lines round v to 2 Nachkommastellen.
-		
+		// Spielereingabe für die Geschwindigkeit mithilfe der method scannerdouble
 		double vSpieler = input.scannerDouble(
 				"Geben Sie die erforderliche Geschwindigkeit zum Schwingen des Seils ein (in m/s): ");
 		
@@ -46,9 +47,9 @@ public class Spiel05Seil { // Phuong Uyen To
 			System.out.println(
 					"Die Geschwindigkeit ist nicht ausreichend. Das Seil schwingt nicht weit genug. Du bist hinterfallen.");
 			System.out.println("Sie müssen zurückgehen, um das Seil zu holen, und verlieren dabei viel HP und ST");
-			player.setHp(player.getHp() - 50);
+			player.setHp(player.getHp() - 50); //HP und ST werden reduziert
 			player.setSt(player.getSt() - 50);
-			player.statusZeigen();
+			player.statusZeigen(); //aktuelle HP und ST anzeigen
 			
 			if (player.getHp() <= 0 || player.getSt() < 0) {
 				System.out.println("Sie haben alle Lebenspunkte verloren.");
@@ -76,7 +77,7 @@ public class Spiel05Seil { // Phuong Uyen To
 				player.setSt(15);
 			
 			}
-			player.statusZeigen();
+			player.statusZeigen(); //aktuelle HP und ST anzeigen
 		}
 	
 	}
