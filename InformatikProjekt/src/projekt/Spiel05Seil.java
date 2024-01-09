@@ -14,9 +14,17 @@ public class Spiel05Seil { // Phuong Uyen To
 		hohe = hohe * 100;
 		hohe = Math.round(hohe);
 		hohe = hohe / 100; // these last 3 lines round hohe to 2 Nachkommastellen.
-		
 		double g = 9.8; // Gravitationskonstante
-		System.out.println("Sie werden von einem Fluss aufgehalten. Um fortzufahren, mussen Sie ein dortiges Seil nutzen, um auf die andere Seite zu schwingen.");
+		
+		System.out.println("Nach der kurzen Erholung in letzte Herausforderung, gehen Sie zu dem Ort, an dem die 5. Herausforderung stattfindet");
+		System.out.println(" Dieses Zimmer ist wie ein tropischer Wald gestaltet");
+		input.next();
+		System.out.println("Sie werden von  Graben aufgehalten, unter der sich ein Fluss befindet.");
+		input.next();
+		System.out.println("Es ist zu gefährlich, durch den Fluss zu schwimmen, denn der Graben ist ziemlich tief.");
+.		System.out.println("An der Decke des Raumes sind viele Drähte befestigt, deren anderes Ende auf dem Boden liegt.");
+		input.next();
+		System.out.println("Sie verstehen sofort, dass Sie ein dortiges Seil nutzen müssen, um auf die andere Seite zu schwingen.");
 
 		System.out.println(
 				"Um die andere Seite zu erreichen, müssen Sie das Seil mit der richtigen "
@@ -37,29 +45,29 @@ public class Spiel05Seil { // Phuong Uyen To
 		
 			System.out.println(
 					"Die Geschwindigkeit ist nicht ausreichend. Das Seil schwingt nicht weit genug. Du bist hinterfallen.");
-																									
+			System.out.println("Sie müssen zurückgehen, um das Seil zu holen, und verlieren dabei viel HP und ST");
 			player.setHp(player.getHp() - 50);
 			player.setSt(player.getSt() - 50);
 			player.statusZeigen();
 			
 			if (player.getHp() <= 0 || player.getSt() < 0) {
 				System.out.println("Sie haben alle Lebenspunkte verloren.");
-				Seilschwingen(player);
+				Seilschwingen(player); //noch einmal spielen wenn HP oder ST 0 ist
 				
 				break;// Schleife abbrechen
 			
 			} else {
 			
-				System.out.println("Noch einmal versuchen.");
+				System.out.println("Sie holen das Seil und versuchen noch einmal.");
 				
 				vSpieler = input.scannerDouble(
-						"Geben Sie die erforderliche Geschwindigkeit zum Schwingen des Seils ein (in m/s): ");// wenn HP und ST bleiben noch ubrig, dann kann der Spier noch einmal
-																												// entscheiden
+						"Geben Sie die erforderliche Geschwindigkeit zum Schwingen des Seils ein (in m/s): ");// wenn HP und ST bleiben noch ubrig, dann kann der Spier noch einmal entscheiden
+																												
 			}
 		
 		}
 		
-		if (vSpieler >= v) {// wenn die Geschwindigkeit ausreichend ist, dann
+		if (vSpieler >= v) {// wenn die Geschwindigkeit ausreichend ist, dann erfolgreich
 			
 			System.out.println("Herzlichen Glückwunsch! Sie haben die andere Seite erreicht.");
 			
