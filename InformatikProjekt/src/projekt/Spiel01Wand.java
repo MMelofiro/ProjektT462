@@ -1,9 +1,5 @@
 package projekt;
 
-/*
- * I still have to comment this, a lot, but it works :DD
- */
-
 public class Spiel01Wand { // Phuong Uyen To
 
 	Input input = new Input();
@@ -12,28 +8,30 @@ public class Spiel01Wand { // Phuong Uyen To
 		
 		input.next();
 		
-		player.recover(); // recover() goes as the first line of every game method
+		player.recover(); 
 		
 		System.out.println("Wand erklimmen");
 
-		System.out.println(
-				"Das Spiel besteht darin, auf die andere Seite eines Raums zu kommen, der durch "
-				+ "eine 5 Meter hohe Wand, die auf der weichen Erde sich befindet, geteilt ist. ");
+		System.out.println("Wenn Sie den ersten Raum betreten, sehen Sie eine 5 Meter hohe Wand, die auf der weichen Erde sich befindet.");
+		System.out.print("Plötzlich war eine Stimme zu hören: Willkommen im Labyrinth. Das Spiel ist in mehrere Runden unterteilt. ");
+		System.out.println("Wer alle Runden besteht und als Erster die Ziellinie erreicht, erhält 3 Millionen Dollar. Viel Glück.");
+		input.next();
 		
+		System.out.println(" Dies ist die erste Herausforderung für sie: Finden Sie einen Weg, über die Mauer zu gelangen und zur Tür dahinter zu gelangen.");
 		input.next();
 		System.out.println("Sie schauen sich um und bemerken zwei Details.");																					
 		System.out.println(
 				"Die Decke des Raums ist hoch genug, um über die Wand zu springen. Es gibt noch "
 				+ "im Raum: ein Seil, ein 3 Meter langer Bambus, und eine Schaufel.");
 		System.out.print("Sie besprechen mit "+ player.getMitspieler() +", wie Sie Herausforderungen meistern können,");
-		System.out.println("und"+ player.getMitspieler() + "schlägt die Verwendung von Bambus vor");
+		System.out.println("und"+ player.getMitspieler() + "schlägt die Verwendung von Seil vor");
 		input.next();
 																								
 		int nummer = input.scannerInt("1. Seil\n2. Bambus\n3. Schaufel", 3); //der Nummer wird von dem Spieler gegeben mithilfe der method scannerInt 
 
 		while (nummer != 3) { // eine while Schleife wird ausgefuhrt wenn falsche Entscheidung getroffen wird.(wenn nummer unterschiedlich von schaufel(3) ist)
-			System.out.println("Sie sind gefallen");
-			
+			System.out.println("Die Wand ist weich und rutschig deshalb kann es nicht benutzt werden. Sie sind gefallen");
+
 			input.fixNext();
 			input.next();
 			
@@ -51,7 +49,7 @@ public class Spiel01Wand { // Phuong Uyen To
 				
 			} else {
 				
-				wand(player); // the method wand will run again (player has to play again, from last checkpoint)
+				wand(player); // Das Spiel wird wiederholt wenn alle ST oder HP verloren sind.
 				
 				break; // Schleife abbrechen
 				
@@ -71,7 +69,7 @@ public class Spiel01Wand { // Phuong Uyen To
 				
 			} else {
 				
-				wand(player); // minigame repeats
+				wand(player); // Das Spiel wird wiederholt wenn alle ST oder HP verloren sind.
 				
 			}
 			
