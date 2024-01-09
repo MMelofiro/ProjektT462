@@ -9,27 +9,42 @@ public class Spiel04Weg {
 		player.recover();
 		
 		System.out.println("Zweiweg der Entscheidungen");
+		input.next(); 
 		
-		System.out.println(
-				"Sie befinden sich an einer Kreuzung, an der es zwei Wege gibt. Auf der rechten ist eine Gruppe von Menschen zu sehen, die sich unterhalten, auf der linken ist ein einsamer Park sichtbar, aus dem metallische Geräusche zu hören sind.");
+		System.out.println("Sie haben die Hälfte des Spiels abgeschlossen. Während Sie in den nächsten Raum gehen, spüren Sie, dass die Anzahl der Spieler deutlich zurückgegangen ist.");
+		System.out.println("Sie fragen "+player.getMitspieler()+", ob dies die Arbeit der dahinter stehenden Organisation ist.");
+		input.next();
+		System.out.print(player.getMitspieler() +" antwortet: Das ist richtig. Die Anzahl der Spieler ist stark reduziert. ");
+		System.out.println("Denkst du, dass unter den Spielern auch Leute von dieser Organisation gibt?"); 
+		input.next();
+		Systen.out.println("Sie fühlen sich gerechtfertigt. Dies erleichtert der Organisation die Beobachtung und Kontrolle.");
+		System.out.println("Sie sagen: Du hast Recht. Dann müssen wir vorsichtig mit anderen Menschen sein.");
+		input.next();
+		
+		System.out.print("Sie gehen weiter, bis sich die Straße in zwei Wege teilt. Auf der rechten ist eine Gruppe von Menschen zu sehen, ");
+		System.out.println("die sich unterhalten, auf der linken ist ein einsamer Park sichtbar, aus dem metallische Geräusche zu hören sind.");
 																								
-		System.out.println("Wohin mochten Sie gehen?");
+		System.out.println("Wohin möchten Sie gehen?");
 		
 		int nummer = input.scannerInt("1.links \n2. rechts", 2);
 		
 		if (nummer == 1) {// wenn der Spieler hat links gewahlt
 			
-			System.out.println("Sie finden ein Haus mit Essen und Getranke!");// Fragen, ob er Getranke oder Essen wahlt
+			System.out.println("Sie finden ein Haus mit Essen und Getränke!");// Fragen, ob er Getranke oder Essen wahlt
 			
-			System.out.println("Mochten sie trinken oder essen? 1 oder 2?");
+			System.out.println("Möchten sie trinken oder essen? 1 oder 2?");
 			
 			int nummer1 = input.scannerInt("1. Trinken \n2. Essen", 2);
 			
 			if (nummer1 == 1) {
+				System.out.println("Sie beschließen, Wasser zu trinken, nachdem Sie sichergestellt haben, dass es nicht giftig ist.");
+				input.next();
 				System.out.println(" Nach dem Trinken stellen Sie 10 ST wieder her!");
 				player.setSt(player.getSt() + 10); // wenn er fur trinken wahlt, dann erhalt er ST
 				
 			} else if (nummer1 == 2) {// else erhalt er HP
+				System.out.println("Sie beschließen zu essen, nachdem Sie sichergestellt haben, dass es nicht giftig ist.");
+				input.next();
 				System.out.println(" Nach dem Essen stellen Sie 10  wieder her!");
 				player.setHp(player.getHp() + 10);
 				
@@ -52,11 +67,15 @@ public class Spiel04Weg {
 				int nummer3 = input.scannerInt("1. Trinken \n2. Essen", 2);// die Wahl des Spielers
 				
 				if (nummer3 == 1) {
+					System.out.println("Sie beschließen, Wasser zu trinken, nachdem Sie sichergestellt haben, dass es nicht giftig ist.");
+					input.next();
 					System.out.println(" Nach dem Trinken stellen Sie 10 ST wieder her!");
 
 					player.setSt(player.getSt() + 10); // wenn er fur trinken wahlt, dann erhalt er ST
 					
 				} else if (nummer3 == 2) {// else erhalt er HP
+					System.out.println("Sie beschließen zu essen, nachdem Sie sichergestellt haben, dass es nicht giftig ist.");
+					input.next();
 					System.out.println(" Nach dem Essen stellen Sie 10 HP wieder her!");
 					player.setHp(player.getHp() + 10);
 					
