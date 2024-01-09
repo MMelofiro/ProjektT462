@@ -13,8 +13,8 @@ public class Ende {
 	public void ende2() { // Emir Sultanov
 		
 		System.out.println(
-				"Sie haben alle Herausforderungen gemeistert, aber die Person, die Sie gerettet\n"
-				+ "haben, ist ein Mitglied der Organisation. Sie wurden gefangen genommen und\n"
+				"Sie haben alle Herausforderungen gemeistert, aber"+player.getMitspieler()+"\n"
+				+ " ist ein Mitglied der Organisation. Sie wurden gefangen genommen und\n"
 				+ "getötet.");
 		
 	}
