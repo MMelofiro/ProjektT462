@@ -39,13 +39,11 @@ public class Spiel05Seil { // Phuong Uyen To
 				+ hohe + ". v = 2h/g =");
 																								
 		// Spielereingabe für die Geschwindigkeit mithilfe der method scannerdouble
-		double vSpieler = input.scannerDouble(
-				"Geben Sie die erforderliche Geschwindigkeit zum Schwingen des Seils ein (in m/s): ");
+		double vSpieler = input.scannerDouble("Geben Sie die erforderliche Geschwindigkeit zum Schwingen des Seils ein (in m/s): ");
 		
 		while (vSpieler < v) { // 2 ergebnisse vergleichen
 		
-			System.out.println(
-					"Die Geschwindigkeit ist nicht ausreichend. Das Seil schwingt nicht weit genug. Du bist hinterfallen.");
+			System.out.println("Die Geschwindigkeit ist nicht ausreichend. Das Seil schwingt nicht weit genug. Du bist hinterfallen.");
 			System.out.println("Sie müssen zurückgehen, um das Seil zu holen, und verlieren dabei viel HP und ST");
 			player.setHp(player.getHp() - 50); //HP und ST werden reduziert
 			player.setSt(player.getSt() - 50);
@@ -53,9 +51,7 @@ public class Spiel05Seil { // Phuong Uyen To
 			player.statusZeigen(); //aktuelle HP und ST anzeigen
 			
 			if (player.getHp() <= 0 || player.getSt() < 0) {
-				System.out.println("Sie haben alle Lebenspunkte verloren.");
 				Seilschwingen(player); //noch einmal spielen wenn HP oder ST 0 ist
-				
 				break;// Schleife abbrechen
 			
 			} else {
