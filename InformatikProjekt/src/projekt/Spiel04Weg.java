@@ -7,7 +7,7 @@ public class Spiel04Weg {
 	public void weg(Player player) {
 		
 		player.recover();
-		
+		input.next();
 		System.out.println("Zweiweg der Entscheidungen");
 		input.next(); 
 		//Gesprach
