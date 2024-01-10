@@ -33,10 +33,9 @@ public class Spiel01Wand { // Phuong Uyen To
 			System.out.println("Die Wand ist weich und rutschig deshalb kann es nicht benutzt werden. Sie sind gefallen");
 			input.next();
 			input.fixNext();
-
+			player.setHp(player.getHp() - 10);//Hp reduziert werden 
+			player.setSt(player.getSt() - 10);//ST reduziert werden
 			if (player.getHp() > 0 && player.getSt() > 0) { // Prufen, ob alle HP oder ST verloren sind
-				player.setHp(player.getHp() - 10);//Hp reduziert werden 
-				player.setSt(player.getSt() - 10);//ST reduziert werden
 				player.statusZeigen(); //ST und Hp anzeigen durch die Method statusZeigen 
 				input.next();
 				System.out.println("Noch einmal versuchen");
@@ -45,7 +44,6 @@ public class Spiel01Wand { // Phuong Uyen To
 				
 			} else {
 				player.statusZeigen();
-				System.out.println("Sie haben alle Lebenspunkte verloren");
 				input.next();
 				wand(player); // Das Spiel wird wiederholt wenn alle ST oder HP verloren sind.
 				
@@ -67,7 +65,6 @@ public class Spiel01Wand { // Phuong Uyen To
 				
 			} else {
 				player.statusZeigen();
-				System.out.println("Sie haben alle Lebenspunkte verloren.");
 				input.next();
 				wand(player); // Das Spiel wird wiederholt wenn alle ST oder HP verloren sind.
 				
