@@ -17,7 +17,7 @@ public class Spiel01Wand { // Phuong Uyen To
 		System.out.println("Wer alle Runden besteht und als Erster die Ziellinie erreicht, erhält 3 Millionen Dollar. Viel Glück.");
 		input.next();
 		
-		System.out.println(" Dies ist die erste Herausforderung für sie: Finden Sie einen Weg, über die Mauer zu gelangen und zur Tür dahinter zu gelangen.");
+		System.out.println("Dies ist die erste Herausforderung für sie: Finden Sie einen Weg, über die Mauer zu gelangen und zur Tür dahinter zu gelangen.");
 		input.next();
 		System.out.println("Sie schauen sich um und bemerken zwei Details.");																					
 		System.out.println(
@@ -44,6 +44,7 @@ public class Spiel01Wand { // Phuong Uyen To
 				nummer = input.scannerInt("1. Seil\n2. Bambus\n3. Schaufel", 3); //noch einmal die Antwort geben
 				
 			} else {
+				player.statusZeigen();
 				System.out.println("Sie haben alle Lebenspunkte verloren");
 				input.next();
 				wand(player); // Das Spiel wird wiederholt wenn alle ST oder HP verloren sind.
@@ -65,6 +66,7 @@ public class Spiel01Wand { // Phuong Uyen To
 				player.setHp(player.getHp() + 5);
 				
 			} else {
+				player.statusZeigen();
 				System.out.println("Sie haben alle Lebenspunkte verloren.");
 				input.next();
 				wand(player); // Das Spiel wird wiederholt wenn alle ST oder HP verloren sind.
