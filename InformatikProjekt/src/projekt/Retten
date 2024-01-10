@@ -11,6 +11,6 @@ public class Retten {
         int nummer6=input.scannerInt("1. Ja\n2. Nein\n", 1, 2); 
 		if (nummer6==1) {
 			player.setGerettet(true);
-		}else player.setGerettet(false);
+		}
 		}
 }
