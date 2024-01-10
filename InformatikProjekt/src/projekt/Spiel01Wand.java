@@ -31,24 +31,22 @@ public class Spiel01Wand { // Phuong Uyen To
 
 		while (nummer != 3) { // eine while Schleife wird ausgefuhrt wenn falsche Entscheidung getroffen wird.(wenn nummer unterschiedlich von schaufel(3) ist)
 			System.out.println("Die Wand ist weich und rutschig deshalb kann es nicht benutzt werden. Sie sind gefallen");
-
+			input.next();
 			input.fixNext();
-			input.next();
-			
-			player.setHp(player.getHp() - 10);//Hp reduziert werden 
-			player.setSt(player.getSt() - 10);//ST reduziert werden
-			player.statusZeigen(); //ST und Hp anzeigen durch die Method statusZeigen in Player-Klasse
-			
-			input.next();
 
 			if (player.getHp() > 0 && player.getSt() > 0) { // Prufen, ob alle HP oder ST verloren sind
-				
+				player.setHp(player.getHp() - 10);//Hp reduziert werden 
+				player.setSt(player.getSt() - 10);//ST reduziert werden
+				player.statusZeigen(); //ST und Hp anzeigen durch die Method statusZeigen 
+				input.next();
 				System.out.println("Noch einmal versuchen");
 				
 				nummer = input.scannerInt("1. Seil\n2. Bambus\n3. Schaufel", 3); //noch einmal die Antwort geben
 				
 			} else {
-				
+				System.out.println("Sie haben alle Lebenspunkte verloren");
+				input.next();
+				input.fixNext();
 				wand(player); // Das Spiel wird wiederholt wenn alle ST oder HP verloren sind.
 				
 				break; // Schleife abbrechen
@@ -69,6 +67,8 @@ public class Spiel01Wand { // Phuong Uyen To
 				
 			} else {
 				System.out.println("Sie haben alle Lebenspunkte verloren.");
+				input.next();
+				input.fixNext();
 				wand(player); // Das Spiel wird wiederholt wenn alle ST oder HP verloren sind.
 				
 			}
