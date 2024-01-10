@@ -40,12 +40,14 @@ public class Spiel04Weg {
 			if (nummer1 == 1) {
 				System.out.println("Sie beschließen, Wasser zu trinken, nachdem Sie sichergestellt haben, dass es nicht giftig ist.");
 				input.next();
-				System.out.println(" Nach dem Trinken stellen Sie 10 ST wieder her!");
+				input.fixNext();
+				System.out.println("Nach dem Trinken stellen Sie 10 ST wieder her!");
 				player.setSt(player.getSt() + 10); // wenn er fur trinken wahlt, dann erhalt er ST
 				
 			} else if (nummer1 == 2) {// else erhalt er HP
 				System.out.println("Sie beschließen zu essen, nachdem Sie sichergestellt haben, dass es nicht giftig ist.");
 				input.next();
+				input.fixNext();
 				System.out.println(" Nach dem Essen stellen Sie 10  wieder her!");
 				player.setHp(player.getHp() + 10);
 				
@@ -70,12 +72,14 @@ public class Spiel04Weg {
 				if (nummer3 == 1) {
 					System.out.println("Sie beschließen, Wasser zu trinken, nachdem Sie sichergestellt haben, dass es nicht giftig ist.");
 					input.next();
+					input.fixNext();
 					System.out.println(" Nach dem Trinken stellen Sie 10 ST wieder her!");
 					player.setSt(player.getSt() + 10); // wenn er fur trinken wahlt, dann erhalt er ST
 					
 				} else if (nummer3 == 2) {// else erhalt er HP
 					System.out.println("Sie beschließen zu essen, nachdem Sie sichergestellt haben, dass es nicht giftig ist.");
 					input.next();
+					input.fixNext();
 					System.out.println("Nach dem Essen stellen Sie 10 HP wieder her!");
 					player.setHp(player.getHp() + 10);
 					
