@@ -55,11 +55,11 @@ public class Spiel04Weg {
 			
 			System.out.println("Sie werden von der Gruppe von Menschen angegriffen.");
 			
-			System.out.println("Mochten Sie fluchten oder sich schutzen und weiter gehen?");
+			System.out.println("Möchten Sie flüchten oder sich schützen und weiter gehen?");
 			
-			int nummer2 = input.scannerInt("1.Fluchten \n2. Sich schutzen und weiter gehen", 2);
+			int nummer2 = input.scannerInt("1.Flüchten \n2. Sich schützen und weiter gehen", 2);
 			
-			if (nummer2 == 1) {// falls der Spieler flucht, dann wahlt er links und kann noch ST oder HP erhalten
+			if (nummer2 == 1) {// falls der Spieler flücht, dann wählt er links und kann noch ST oder HP erhalten
 				
 				System.out.println("Sie laufen schnell zurück zur Kreuzung und gehen nach links");
 				
