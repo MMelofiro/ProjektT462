@@ -17,7 +17,7 @@ public class Spiel04Weg {
 		System.out.print(player.getMitspieler() +" antwortet: Das ist richtig. Die Anzahl der Spieler ist stark reduziert. ");
 		System.out.println("Denkst du, dass unter den Spielern auch Leute von dieser Organisation gibt?"); 
 		input.next();
-		Systen.out.println("Sie fühlen sich gerechtfertigt. Dies erleichtert der Organisation die Beobachtung und Kontrolle.");
+		System.out.println("Sie fühlen sich gerechtfertigt. Dies erleichtert der Organisation die Beobachtung und Kontrolle.");
 		System.out.println("Sie sagen: Du hast Recht. Dann müssen wir vorsichtig mit anderen Menschen sein.");
 		input.next();
 		
@@ -27,7 +27,7 @@ public class Spiel04Weg {
 																								
 		System.out.println("Wohin möchten Sie gehen?");
 		
-		int nummer = input.scannerInt("1.links \n2. rechts", 2);//Wahlen, welche richtung der spieler gehen will
+		int nummer = input.scannerInt("1.Links \n2.Rechts", 2);//Wahlen, welche richtung der spieler gehen will
 		
 		if (nummer == 1) {// wenn der Spieler links gewahlt hat
 			
@@ -76,7 +76,7 @@ public class Spiel04Weg {
 				} else if (nummer3 == 2) {// else erhalt er HP
 					System.out.println("Sie beschließen zu essen, nachdem Sie sichergestellt haben, dass es nicht giftig ist.");
 					input.next();
-					System.out.println(" Nach dem Essen stellen Sie 10 HP wieder her!");
+					System.out.println("Nach dem Essen stellen Sie 10 HP wieder her!");
 					player.setHp(player.getHp() + 10);
 					
 				}
