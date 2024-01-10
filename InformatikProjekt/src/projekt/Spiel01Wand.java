@@ -65,7 +65,6 @@ public class Spiel01Wand { // Phuong Uyen To
 				
 			} else {
 				player.statusZeigen();
-				input.next();
 				wand(player); // Das Spiel wird wiederholt wenn alle ST oder HP verloren sind.
 				
 			}
