@@ -87,7 +87,6 @@ public class Spiel04Weg {
 				else {//sonst kann er auch die herausforderung uberwinden, aber verliert HP
 	                  	player.setHp(player.getHp() - 10);
 	                	if (player.getHp()<=0) {
-					System.out.println("Sie haben alle Lebenspunkte verloren.");
 					weg(player);
 				} else System.out.println("Sie sind ihnen erfolgreich entkommen, verlieren jedoch 10 HP.");
 			}
