@@ -46,7 +46,6 @@ public class Spiel01Wand { // Phuong Uyen To
 			} else {
 				System.out.println("Sie haben alle Lebenspunkte verloren");
 				input.next();
-				input.fixNext();
 				wand(player); // Das Spiel wird wiederholt wenn alle ST oder HP verloren sind.
 				
 				break; // Schleife abbrechen
@@ -68,7 +67,6 @@ public class Spiel01Wand { // Phuong Uyen To
 			} else {
 				System.out.println("Sie haben alle Lebenspunkte verloren.");
 				input.next();
-				input.fixNext();
 				wand(player); // Das Spiel wird wiederholt wenn alle ST oder HP verloren sind.
 				
 			}
