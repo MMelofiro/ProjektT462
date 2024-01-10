@@ -7,17 +7,17 @@ public class Spiel05Seil { // Phuong Uyen To
 	public void Seilschwingen(Player player) {
 		
 		player.recover();
-		
+		input.next();
 		System.out.println("Seilschwingen");
 
 		//Anweisung
 		System.out.println("Nach der kurzen Erholung in letzte Herausforderung, gehen Sie zu dem Ort, an dem die 5. Herausforderung stattfindet");
-		System.out.println(" Dieses Zimmer ist wie ein tropischer Wald gestaltet");
+		System.out.println("Dieses Zimmer ist wie ein tropischer Wald gestaltet");
 		input.next();
 		System.out.println("Sie werden von  Graben aufgehalten, unter der sich ein Fluss befindet.");
 		input.next();
 		System.out.println("Es ist zu gefährlich, durch den Fluss zu schwimmen, denn der Graben ist ziemlich tief.");
-.		System.out.println("An der Decke des Raumes sind viele Drähte befestigt, deren anderes Ende auf dem Boden liegt.");
+		System.out.println("An der Decke des Raumes sind viele Drähte befestigt, deren anderes Ende auf dem Boden liegt.");
 		input.next();
 		System.out.println("Sie verstehen sofort, dass Sie ein dortiges Seil nutzen müssen, um auf die andere Seite zu schwingen.");
 
@@ -49,6 +49,7 @@ public class Spiel05Seil { // Phuong Uyen To
 			System.out.println("Sie müssen zurückgehen, um das Seil zu holen, und verlieren dabei viel HP und ST");
 			player.setHp(player.getHp() - 50); //HP und ST werden reduziert
 			player.setSt(player.getSt() - 50);
+			input.next();
 			player.statusZeigen(); //aktuelle HP und ST anzeigen
 			
 			if (player.getHp() <= 0 || player.getSt() < 0) {
