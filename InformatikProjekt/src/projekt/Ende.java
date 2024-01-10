@@ -9,6 +9,7 @@ public class Ende {
 		input.next();
 		System.out.println("Aber dank der Erfahrung haben Sie erkannt, dass es sich um eine Waffe handelte, und weicht der Kugel aus.");
 		System.out.println("Sie sind jedoch immer noch von seinen Untergebenen umgeben.");
+		input.next();
 		System.out.print("Als er sieht, dass Sie keinen Ausweg mehr haben, scheint er erleichtert zu sein und verrät, dass er weiß, dass Sie ein Detektiv sind");
 		System.out.println(", der gekommen ist, um Nachforschungen anzustellen und Ihnen alles über dieses Mordspiel zu erzählen.");
 		input.next();
@@ -26,6 +27,7 @@ public class Ende {
 		input.next();
 		System.out.println("Aber dank der Erfahrung haben Sie erkannt, dass es sich um eine Waffe handelte, und weicht der Kugel aus.");
 		System.out.println("Sie sind jedoch immer noch von seinen Untergebenen umgeben.");
+		input.next();
 		System.out.print("Als er sieht, dass Sie keinen Ausweg mehr haben, scheint er erleichtert zu sein und verrät, dass er weiß, dass Sie ein Detektiv sind");
 		System.out.println(", der gekommen ist, um Nachforschungen anzustellen und Ihnen alles über dieses Mordspiel zu erzählen.");
 		input.next();
@@ -33,6 +35,7 @@ public class Ende {
 		input.next();
 		System.out.println("Aber "+player.getMitspieler()+"hat sich aufgehalten.");
 		System.out.println(player.getMitspieler()+" ist ein Mitglied der Organisation.");
+		input.next();
 		System.out.println("Sie wurden getötet.");
 			
 	}
