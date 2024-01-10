@@ -68,7 +68,7 @@ public class Spiel01Wand { // Phuong Uyen To
 				player.setHp(player.getHp() + 5);
 				
 			} else {
-				
+				System.out.println("Sie haben alle Lebenspunkte verloren.");
 				wand(player); // Das Spiel wird wiederholt wenn alle ST oder HP verloren sind.
 				
 			}
