@@ -10,8 +10,6 @@ public class Spiel02Schwimm { //Marcello Melofiro
 			
 			player.recover(); //The player gets the status saved in the methode save() in player class.
 			
-			player.statusZeigen(); //Please write recover and statusZeigen at the start of every minigame
-			
 			input.next();
 			
 			System.out.println(
