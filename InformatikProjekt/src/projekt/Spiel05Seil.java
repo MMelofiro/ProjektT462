@@ -9,7 +9,7 @@ public class Spiel05Seil { // Phuong Uyen To
 		player.recover();//Erhalten zuvor gespeicherte HP und ST zurück
 		input.next();//die method next wird benutzt, um darauf zu warten, dass der Spieler die Eingabetaste drückt, um die Zeile zu ändern
 		System.out.println("Seilschwingen");
-
+		player.statusZeigen(); //aktuelle HP und ST anzeigen
 		//Anweisung
 		System.out.println("Nach der kurzen Erholung in letzte Herausforderung, gehen Sie zu dem Ort, an dem die 5. Herausforderung stattfindet");
 		System.out.println("Dieses Zimmer ist wie ein tropischer Wald gestaltet");
@@ -72,7 +72,6 @@ public class Spiel05Seil { // Phuong Uyen To
 				player.setSt(50);
 			
 			}
-			player.statusZeigen(); //aktuelle HP und ST anzeigen
 		}
 	
 	}
