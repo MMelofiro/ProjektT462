@@ -9,7 +9,9 @@ public class Spiel01Wand { // Phuong Uyen To
 		input.next();//die method next wird benutzt, um darauf zu warten, dass der Spieler die Eingabetaste drückt, um die Zeile zu ändern
 		
 		player.recover(); //Erhalten zuvor gespeicherte HP und ST zurück
+		
 		player.statusZeigen();//ST und Hp anzeigen durch die Method statusZeigen
+		
 		// Vorstellung
 		System.out.println("Wand erklimmen");
 		System.out.println("Wenn Sie den ersten Raum betreten, sehen Sie eine 5 Meter hohe Wand, die auf der weichen Erde sich befindet.");

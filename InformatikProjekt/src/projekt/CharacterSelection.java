@@ -4,7 +4,7 @@ public class CharacterSelection { // Marcello Melofiro
 	
 	Input input = new Input();
 	
-	public void charakterAuswaehlen(Player player) { //method of character selection
+	public void charakterAuswaehlen(Player player) { // Methode um Charakter auszuwählen
 		
 		System.out.println("Wählen Sie Ihren Charakter aus");
 		

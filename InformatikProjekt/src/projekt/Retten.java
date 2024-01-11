@@ -1,0 +1,29 @@
+package projekt;
+
+public class Retten { // Phuong Uyen To
+
+	Input input = new Input();// ein Instanz erzeugen, um Input Klasse zu benutzen
+
+	public void retten(Player player) {// parameter player und die klasse Player
+		
+		player.recover(); //Erhalten zuvor gespeicherte HP und ST zurück
+		player.statusZeigen(); //aktuelle HP und ST anzeigen
+
+		// Geschichte erzahlen
+		System.out.println("Gerade als Sie die andere erreichen, hören Sie von hinten einen Ruf: „Hilf mir!“");
+		System.out.println(
+				"Als Sie sich umdrehen, realisieren Sie, dass der Schrei von " + player.getMitspieler() + " stammt.");
+		input.next();
+		System.out.println("Es scheint, als ob " + player.getMitspieler()
+				+ " nicht mit genug Kraft sprang und kurz davor , von der Klippe zu fallen.");
+		System.out.println("Sie sind jetzt sehr müde nach 5 Spielen, aber vielleicht können Sie "
+				+ player.getMitspieler() + " retten.");
+		System.out.println("Möchten Sie " + player.getMitspieler() + " retten?");
+
+		int nummer6 = input.scannerInt("1. Ja\n2. Nein\n", 2); // die entscheidung des Spielers wird eingegeben
+		if (nummer6 == 1) {// falls er 1 wahlt, dann boolean gerettet true ist
+			player.setGerettet(true);
+		}
+	}
+
+}

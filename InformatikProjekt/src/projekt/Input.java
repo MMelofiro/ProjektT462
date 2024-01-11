@@ -1,5 +1,7 @@
 package projekt;
 
+import java.util.InputMismatchException; // um das Fehler zu zeigen
+
 /*
  * Input Class
  * Most important class tbh. Used everytime the game needs any input from the player.
@@ -44,22 +46,30 @@ public class Input { //Marcello Melofiro
 
 		while (nummer < 1 || nummer > max) { // repeat while nummer is out of range
 
-			if (scanner.hasNextDouble()) { // if the next input is an int, then true
+			try { // try und catch, weil wenn man ein nummer mit komma schreibt, geht alles kaputt haha
+				
+				if (scanner.hasNextDouble()) { // if the next input is an int, then true
 
-				nummer = scanner.nextInt(); // a new value for nummer will be asked, this will always happen, at least
-											// once
-			} else { // if the nummer asked the line above wasn't a number, then...
+					nummer = scanner.nextInt(); // a new value for nummer will be asked, this will always happen, at least
+												// once
+				} else { // if the nummer asked the line above wasn't a number, then...
 
-				System.out.println("Bitte, wählen Sie eine mögliche Antwort."); // ...this will be printed, and the loop
-																				// goes back to ask you for the answer
-				scanner.next(); // this stops the loop from printing the text above infinitely.
+					System.out.println("Bitte, geben Sie eine mögliche Antwort."); // ...this will be printed, and the loop
+																					// goes back to ask you for the answer
+					scanner.next(); // this stops the loop from printing the text above infinitely.
+
+				} 
+				
+			} catch (InputMismatchException e) {
+	            System.out.println("Bitte, geben Sie eine mögliche Antwort.");
+	            scanner.next();
 
 			}
-
+			
 		}
 
 		return nummer; // finally when the loop ends, nummer will be returned
-
+		
 	}
 
 	public double scannerDouble(String frage) {
