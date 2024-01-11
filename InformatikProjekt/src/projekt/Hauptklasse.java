@@ -67,7 +67,7 @@ public class Hauptklasse {
 			player.save();
 			
 		// Spiel Retten Phuong Uyen To
-		//retten.retten();
+		retten.retten(player);
 			player.save();
 			
 		// Spiel 06 Emir Sultanov
@@ -81,12 +81,10 @@ public class Hauptklasse {
 		}
 		
 		if (player.getGerettet() == true) {
-			
 			// Ende 2 Phuong Uyen To
 			ende.ende2(player);
-			
+		
 		} else {
-			
 			// Ende 1 Phuong Uyen To
 			ende.ende1(player);
 			
