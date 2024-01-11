@@ -37,7 +37,7 @@ public class PlatformSpringen06 {  // Initialisierung von der Klasse
 
         do { // Wird solange ausgefuhrt, wenn ans nicht gleich 3 UND Spieler hat noch ST HP
 
-            ant = input.scannerInt(" 1. Rechteck\n2. Dreieck\n3. Kreis", 3); // Zuweisung und Speicherung der Eingabe mit der Fragestellung
+            ant = input.scannerInt("1. Rechteck\n2. Dreieck\n3. Kreis", 3); // Zuweisung und Speicherung der Eingabe mit der Fragestellung
 
             if (ant != 3) { // Wenn die Antwort nicht gleich 3 ist, wird der Spieler aktualisiert.
                 player.setHp(player.getHp() - 15);  // Wenn Eingabe des Spielers nicht 3 ist, HP wird um 15 sich verringert
