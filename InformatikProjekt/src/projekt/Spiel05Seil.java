@@ -69,9 +69,9 @@ public class Spiel05Seil { // Phuong Uyen To
 			
 			System.out.println("Herzlichen Glückwunsch! Sie haben die andere Seite erreicht.");
 			
-			if (player.getSt() > 15) {//falls st grosser als 15, dann wird es reduziert auf 15(mude ist)
+			if (player.getSt() > 50) {//falls st grosser als 15, dann wird es reduziert auf 15(mude ist)
 				
-				player.setSt(15);
+				player.setSt(50);
 			
 			}
 			player.statusZeigen(); //aktuelle HP und ST anzeigen
