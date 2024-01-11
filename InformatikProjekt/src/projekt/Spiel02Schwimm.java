@@ -9,6 +9,7 @@ public class Spiel02Schwimm { //Marcello Melofiro
 		public void schwimm (Player player) {
 			
 			player.recover(); //The player gets the status saved in the methode save() in player class.
+			player.statuZeigen();//Ausgabe von ST und HP
 			
 			input.next();
 			
