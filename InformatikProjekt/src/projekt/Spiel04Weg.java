@@ -9,6 +9,8 @@ public class Spiel04Weg {
 		player.recover(); //Erhalten zuvor gespeicherte HP und ST zurück
 		input.next();//die method next wird benutzt, um darauf zu warten, dass der Spieler die Eingabetaste drückt, um die Zeile zu ändern
 		System.out.println("Zweiweg der Entscheidungen");
+		// Ausgabe der aktuellen HP und ST
+		player.statusZeigen();
 		input.next(); 
 		//Gesprach
 		System.out.println("Sie haben die Hälfte des Spiels abgeschlossen. Während Sie in den nächsten Raum gehen, spüren Sie, dass die Anzahl der Spieler deutlich zurückgegangen ist.");
@@ -94,8 +96,7 @@ public class Spiel04Weg {
 			}
 			
 		}
-			// Ausgabe der aktuellen HP und ST
-			player.statusZeigen();
+		
 	}
 
 }
