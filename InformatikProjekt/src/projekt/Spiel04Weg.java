@@ -22,7 +22,7 @@ public class Spiel04Weg {
 		input.next();
 		
 		//Das Spiel beginnt
-		System.out.print("Sie gehen weiter, bis sich die Straße in zwei Wege teilt. Auf der rechten ist eine Gruppe von Menschen zu sehen, ");
+		System.out.println("Sie gehen weiter, bis sich die Straße in zwei Wege teilt. Auf der rechten ist eine Gruppe von Menschen zu sehen, ");
 		System.out.println("die sich unterhalten, auf der linken ist ein einsamer Park sichtbar, aus dem metallische Geräusche zu hören sind.");
 																								
 		System.out.println("Wohin möchten Sie gehen?");
@@ -48,7 +48,7 @@ public class Spiel04Weg {
 				System.out.println("Sie beschließen zu essen, nachdem Sie sichergestellt haben, dass es nicht giftig ist.");
 				input.next();
 				input.fixNext();
-				System.out.println(" Nach dem Essen stellen Sie 10  wieder her!");
+				System.out.println("Nach dem Essen stellen Sie 10  wieder her!");
 				player.setHp(player.getHp() + 10);
 				
 			}
