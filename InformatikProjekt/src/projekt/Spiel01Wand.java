@@ -2,16 +2,15 @@ package projekt;
 
 public class Spiel01Wand { // Phuong Uyen To
 
-	Input input = new Input();
+	Input input = new Input(); //ein Instanz erzeugen, um Input Klasse zu benutzen
 
 	public void  wand (Player player) {
 		
-		input.next();
+		input.next();//die method next wird benutzt, um darauf zu warten, dass der Spieler die Eingabetaste drückt, um die Zeile zu ändern
 		
-		player.recover(); 
-		
+		player.recover(); //Erhalten zuvor gespeicherte HP und ST zurück
+		// Vorstellung
 		System.out.println("Wand erklimmen");
-
 		System.out.println("Wenn Sie den ersten Raum betreten, sehen Sie eine 5 Meter hohe Wand, die auf der weichen Erde sich befindet.");
 		System.out.print("Plötzlich war eine Stimme zu hören: Willkommen im Labyrinth. Das Spiel ist in mehrere Runden unterteilt. ");
 		System.out.println("Wer alle Runden besteht und als Erster die Ziellinie erreicht, erhält 3 Millionen Dollar. Viel Glück.");
@@ -33,8 +32,8 @@ public class Spiel01Wand { // Phuong Uyen To
 			System.out.println("Die Wand ist weich und rutschig deshalb kann es nicht benutzt werden. Sie sind gefallen");
 			input.next();
 			input.fixNext();
-			player.setHp(player.getHp() - 10);//Hp reduziert werden 
-			player.setSt(player.getSt() - 10);//ST reduziert werden
+			player.setHp(player.getHp() - 10);//Hp wird reduziert 
+			player.setSt(player.getSt() - 10);//ST wird reduziert 
 			if (player.getHp() > 0 && player.getSt() > 0) { // Prufen, ob alle HP oder ST verloren sind
 				player.statusZeigen(); //ST und Hp anzeigen durch die Method statusZeigen 
 				input.next();
@@ -43,7 +42,7 @@ public class Spiel01Wand { // Phuong Uyen To
 				nummer = input.scannerInt("1. Seil\n2. Bambus\n3. Schaufel", 3); //noch einmal die Antwort geben
 				
 			} else {
-				player.statusZeigen();
+				player.statusZeigen();//ST und Hp anzeigen durch die Method statusZeigen 
 				input.next();
 				wand(player); // Das Spiel wird wiederholt wenn alle ST oder HP verloren sind.
 				
@@ -54,7 +53,7 @@ public class Spiel01Wand { // Phuong Uyen To
 
 		if (nummer == 3) { // wenn der Spieler Schaufel wahlt, dann fuhrt diese entscheidung aus
 			
-			player.setSt(player.getSt() - 10);
+			player.setSt(player.getSt() - 10); //ST wird reduziert 
 			
 			if ((player.getHp() > 0) && (player.getSt() > 0)) { //uberprufen, ob der Spieler noch HP und ST hat
 				
@@ -64,7 +63,7 @@ public class Spiel01Wand { // Phuong Uyen To
 				player.setHp(player.getHp() + 5);
 				
 			} else {
-				player.statusZeigen();
+				player.statusZeigen();//ST und Hp anzeigen durch die Method statusZeigen
 				wand(player); // Das Spiel wird wiederholt wenn alle ST oder HP verloren sind.
 				
 			}
