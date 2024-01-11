@@ -2,12 +2,12 @@ package projekt;
 
 public class Spiel04Weg {
 
-	Input input = new Input();
+	Input input = new Input(); //ein Instanz erzeugen, um Input Klasse zu benutzen
 
-	public void weg(Player player) {
+	public void weg(Player player) {//parameter player und die klasse Player
 		
-		player.recover();
-		input.next();
+		player.recover(); //Erhalten zuvor gespeicherte HP und ST zurück
+		input.next();//die method next wird benutzt, um darauf zu warten, dass der Spieler die Eingabetaste drückt, um die Zeile zu ändern
 		System.out.println("Zweiweg der Entscheidungen");
 		input.next(); 
 		//Gesprach
@@ -37,12 +37,12 @@ public class Spiel04Weg {
 			
 			int nummer1 = input.scannerInt("1. Trinken \n2. Essen", 2); //entscheiden, entweder HP oder ST nehmen
 			
-			if (nummer1 == 1) {
+			if (nummer1 == 1) {//wenn der Spieler trinken wahlt, dann fuhren diese anweisungen
 				System.out.println("Sie beschließen, Wasser zu trinken, nachdem Sie sichergestellt haben, dass es nicht giftig ist.");
 				input.next();
 				input.fixNext();
 				System.out.println("Nach dem Trinken stellen Sie 10 ST wieder her!");
-				player.setSt(player.getSt() + 10); // wenn er fur trinken wahlt, dann erhalt er ST
+				player.setSt(player.getSt() + 10); // Spieler erhalt ST
 				
 			} else if (nummer1 == 2) {// else erhalt er HP
 				System.out.println("Sie beschließen zu essen, nachdem Sie sichergestellt haben, dass es nicht giftig ist.");
@@ -69,12 +69,12 @@ public class Spiel04Weg {
 				System.out.println("Mochten Sie essen oder trinken?");
 				int nummer3 = input.scannerInt("1. Trinken \n2. Essen", 2);// die Wahl des Spielers
 				
-				if (nummer3 == 1) {
+				if (nummer3 == 1) {//wenn der Spieler trinken wahlt, dann fuhren diese anweisungen
 					System.out.println("Sie beschließen, Wasser zu trinken, nachdem Sie sichergestellt haben, dass es nicht giftig ist.");
 					input.next();
 					input.fixNext();
 					System.out.println(" Nach dem Trinken stellen Sie 10 ST wieder her!");
-					player.setSt(player.getSt() + 10); // wenn er fur trinken wahlt, dann erhalt er ST
+					player.setSt(player.getSt() + 10); // Spieler erhalt ST
 					
 				} else if (nummer3 == 2) {// else erhalt er HP
 					System.out.println("Sie beschließen zu essen, nachdem Sie sichergestellt haben, dass es nicht giftig ist.");
@@ -86,8 +86,8 @@ public class Spiel04Weg {
 				}
 				else {//sonst kann er auch die herausforderung uberwinden, aber verliert HP
 	                  	player.setHp(player.getHp() - 10);
-	                	if (player.getHp()<=0) {
-					weg(player);
+	                	if (player.getHp()<0) {
+					weg(player);//das Spielt wird wiedergeholt wenn HP<0 
 				} else System.out.println("Sie sind ihnen erfolgreich entkommen, verlieren jedoch 10 HP.");
 			}
 				
