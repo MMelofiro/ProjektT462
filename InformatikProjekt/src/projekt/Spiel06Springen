@@ -20,7 +20,7 @@ public class PlatformSpringen06 {  // Initialisierung von der Klasse
         System.out.println("sich befindet, erreichen. Zwischen der Seiten gibt es sogennante Brücke aus den Plattformen, unter den Plattformen ist Abgrund, dessen Höhe nicht bekannt ist. Um die andere Seite");
         this.input.next(); // Benutzer Eingabe , dadurch dass er klickt oder etwas eingibt, geht er zu den nächsten Info Printanweisung
 
-        System.out.println("(des Raumes zu erreichen, müssen sie durch die Plattformen, die aus den geometrischen Figuren besteht, springen.");
+        System.out.println("des Raumes zu erreichen, müssen sie durch die Plattformen, die aus den geometrischen Figuren besteht, springen.");
     }
     public  void ersteAktion(Player player) { // Methode zur Aktion  mit Parameter Klasse player
         player.recover();  // die (HP) und (ST) des Spielers auffüllt, wie es vorher gespeichert wurde
