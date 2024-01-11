@@ -56,11 +56,12 @@ public class Spiel01Wand { // Phuong Uyen To
 			player.setSt(player.getSt() - 10); //ST wird reduziert 
 			
 			if ((player.getHp() > 0) && (player.getSt() > 0)) { //uberprufen, ob der Spieler noch HP und ST hat
-				
+				System.out.println("Sie haben ein Loch unter der Wand gegraben und damit auf andere Seite gekommen");
 				System.out.println("Erfolgreich! Sie sind an der Tür, die zum nächsten Spiel führt, angekommen.");
 				
 				player.setSt(player.getSt() + 5); // Der Spieler erhalt ST und HP
 				player.setHp(player.getHp() + 5);
+				player.statusZeigen();//ST und Hp anzeigen durch die Method statusZeigen
 				
 			} else {
 				player.statusZeigen();//ST und Hp anzeigen durch die Method statusZeigen
