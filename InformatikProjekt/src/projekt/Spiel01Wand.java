@@ -4,7 +4,7 @@ public class Spiel01Wand { // Phuong Uyen To
 
 	Input input = new Input(); //ein Instanz erzeugen, um Input Klasse zu benutzen
 
-	public void  wand (Player player) {
+	public void  wand (Player player) {//parameter player und die klasse Player
 		
 		input.next();//die method next wird benutzt, um darauf zu warten, dass der Spieler die Eingabetaste drückt, um die Zeile zu ändern
 		
