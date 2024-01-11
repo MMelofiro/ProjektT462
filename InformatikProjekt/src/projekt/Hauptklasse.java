@@ -16,29 +16,31 @@ package projekt;
  *			save methodes before and after each minigame
  */
 
-public class Hauptklasse { // Marcello Melofiro
-	
+public class Hauptklasse { 
+	// Marcello Melofiro
 	public static void main(String[] args) {
 		
 		Player player = new Player();
 		
-		Einfuehrung einfuehrung = new Einfuehrung(); // Introduction instance
-		CharacterSelection charak = new CharacterSelection(); // Charakter selection
-		SwierigkeitsCharachter schwierig = new SwierigkeitsCharachter(); // Difficulty
+		Einfuehrung einfuehrung = new Einfuehrung(); // Introduktion instanz
+		CharacterSelection charak = new CharacterSelection(); // Charakter wahlen
+		SwierigkeitsCharachter schwierig = new SwierigkeitsCharachter(); // Schwierigkeit
 		Spiel01Wand spiel01 = new Spiel01Wand(); // Spiel 01
-		Spiel02Schwimm spiel02 = new Spiel02Schwimm(); // Spiel 02
-		//Spiel03 instance
+		Spiel02Schwimm spiel02 = new Spiel02Schwimm();
+		PolareRennen03 spiel03= new PolareRennen03(); 
+		//Phuong Uyen To
 		Spiel04Weg weg = new Spiel04Weg();
 		Spiel05Seil spiel05 = new Spiel05Seil();
-		//Spiel Retten instance 
+		Retten retten= new Retten();
+		//Emir Sultanov
 		//Spiel06 instance
 		//Spiel07 instance
-		Ende ende = new Ende();
+		Ende ende = new Ende(); 
 		
 		//Intro Marcello Melofiro
 		einfuehrung.intro();
 
-		// Character selection Marcello Melofiro
+		// Character auswaehlen Marcello Melofiro
 		charak.charakterAuswaehlen(player);
 		
 		// Difficulty Marcello Melofiro
