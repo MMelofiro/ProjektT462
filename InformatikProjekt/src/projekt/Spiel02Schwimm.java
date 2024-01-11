@@ -6,9 +6,9 @@ public class Spiel02Schwimm { // Marcello Melofiro
 
 		public void schwimm (Player player) {
 			
-			player.recover(); //The player gets the status saved in the methode save() in player class.
+			player.recover(); // Der Spieler erhält den Zustand, der mit der Methode save() vor dem Start dieses Minispiels gespeichert wurde.
 			
-			player.statusZeigen(); //Please write recover and statusZeigen at the start of every minigame
+			player.statusZeigen(); // Bitte deklariert recover() und statusZeigen() am Anfang jedes Minispiels
 			
 			input.next();
 			
@@ -88,7 +88,7 @@ public class Spiel02Schwimm { // Marcello Melofiro
 			
 			int choice2aus = 0;
 			
-			while (choice == 1) { //Sauerstoffballon
+			while (choice == 1) { // Sauerstoffballon
 				
 				System.out.println(
 						"Du versuchst zu tauchen. Nach einer Minute fällt es dir auf, dass du immer weniger Luft kriegst.");
@@ -129,7 +129,7 @@ public class Spiel02Schwimm { // Marcello Melofiro
 					
 				} else {
 					
-					schwimm(player); // the method schwimm will run again (player has to play again, from last checkpoint)
+					schwimm(player); // die Methode schwimm wird noch einmal ausgeführt (der Spieler muss noch einmal spielen, ab dem letzten Checkpoint)
 					
 					break; // Schleife abbrechen
 					
@@ -137,7 +137,7 @@ public class Spiel02Schwimm { // Marcello Melofiro
 																											
 			}
 			
-			if (choice == 2 || choice1aus == 2) { //Tauchermaske flossen
+			if (choice == 2 || choice1aus == 2) { // Tauchermaske flossen
 				
 				System.out.println("Du ziehst die Tauchermaske und die Flossen an, und tauchst.");
 				
@@ -191,7 +191,7 @@ public class Spiel02Schwimm { // Marcello Melofiro
 							
 						} else {
 							
-							schwimm(player); // the method schwimm will run again (player has to play again, from last checkpoint)
+							schwimm(player); // die Methode schwimm wird noch einmal ausgeführt (der Spieler muss noch einmal spielen, ab dem letzten Checkpoint)
 
 						}
 																												
@@ -200,7 +200,7 @@ public class Spiel02Schwimm { // Marcello Melofiro
 					
 				} else {
 					
-					schwimm(player); // the method schwimm will run again (player has to play again, from last checkpoint)
+					schwimm(player); // die Methode schwimm wird noch einmal ausgeführt (der Spieler muss noch einmal spielen, ab dem letzten Checkpoint)
 					
 				} 
 																							
@@ -250,7 +250,7 @@ public class Spiel02Schwimm { // Marcello Melofiro
 						
 					} else {
 						
-						schwimm(player); // the method schwimm will run again (player has to play again, from last checkpoint)
+						schwimm(player); // die Methode schwimm wird noch einmal ausgeführt (der Spieler muss noch einmal spielen, ab dem letzten Checkpoint)
 
 					}
 					
@@ -342,7 +342,7 @@ public class Spiel02Schwimm { // Marcello Melofiro
 						
 					} else {
 						
-						schwimm(player); // the method schwimm will run again (player has to play again, from last checkpoint)
+						schwimm(player); // die Methode schwimm wird noch einmal ausgeführt (der Spieler muss noch einmal spielen, ab dem letzten Checkpoint)
 
 					}
 					

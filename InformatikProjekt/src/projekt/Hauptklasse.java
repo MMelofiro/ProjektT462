@@ -1,19 +1,18 @@
 package projekt;
 
-/*Hauptklasse Class
- *	How is this class used?
- * 		Instances/Objects of the other classes, will be created and used in the main method.
- * 		If possible, no other methods will be created in this class.
- * 		Declare the instances starting with lowercases.
+/*Hauptklasse Klasse
+ * 		Die Instanzen der anderen Klassen werden erzeugt und in der main Methode verwendet.
+ * 		Wenn möglich, keine andere Methoden werden in dieser Klasse erzeugt
+ * 		Der Name der Instanzen werden mit einem Kleinbuchstaben beginnen.
  * 
- *	What is inside this class?
- * 		Main method
- *			introduction (method called)
- *			character selection (method called)
- *			difficulty selection (method called)
- *			All the games  (method called)
- *			Ending  (method called)
- *			save methodes before and after each minigame
+ *	Struktur
+ * 		Main Methode
+ *			Einführung
+ *			Charakter auswählen
+ *			Schwierigkeitsgrad auswählen
+ *			Alle Spiele
+ *			Enden
+ *			save() Methoden vor und nach jedem Minispiel
  */
 
 public class Hauptklasse { // Marcello Melofiro
@@ -22,33 +21,33 @@ public class Hauptklasse { // Marcello Melofiro
 		
 		Player player = new Player();
 		
-		Einfuehrung einfuehrung = new Einfuehrung(); // Introduction instance
-		CharacterSelection charak = new CharacterSelection(); // Charakter selection
-		SwierigkeitsCharachter schwierig = new SwierigkeitsCharachter(); // Difficulty
+		Einfuehrung einfuehrung = new Einfuehrung(); // Einführung Instanz
+		CharacterSelection charak = new CharacterSelection(); // Charakter auswählen
+		SwierigkeitsCharachter schwierig = new SwierigkeitsCharachter(); // Schwierigkeitsgrad
 		Spiel01Wand spiel01 = new Spiel01Wand(); // Spiel 01
 		Spiel02Schwimm spiel02 = new Spiel02Schwimm(); // Spiel 02
-		Spiel03Polar spiel03 = new Spiel03Polar(); // Spiel03
-		Spiel04Weg weg = new Spiel04Weg();
-		Spiel05Seil spiel05 = new Spiel05Seil();
-		Retten retten = new Retten(); //Spiel Retten
-		Spiel06Plattform spiel06 = new Spiel06Plattform(); //Spiel06
-		Spiel07Schach spiel07 = new Spiel07Schach(); //Spiel07
+		Spiel03Polar spiel03 = new Spiel03Polar(); // Spiel 03
+		Spiel04Weg weg = new Spiel04Weg(); // Spiel 04
+		Spiel05Seil spiel05 = new Spiel05Seil(); // Spiel 05
+		Retten retten = new Retten(); //Spiel Retten 
+		Spiel06Plattform spiel06 = new Spiel06Plattform(); // Spiel06
+		Spiel07Schach spiel07 = new Spiel07Schach(); // Spiel07
 			char[][] schachbrett = new char[9][9]; // 2d Array der char enthält wird erzeugt und in der Klasse Schachspiel07 benutzt
 		Ende ende = new Ende(); // Ende
 		
-		//Intro Marcello Melofiro
+		//Einführung Marcello Melofiro
 		einfuehrung.intro();
 
-		// Character selection Marcello Melofiro
+		// Charakter Auswahl Marcello Melofiro
 		charak.charakterAuswaehlen(player);
 		
-		// Difficulty Marcello Melofiro
+		// Schwierigkeitsgrad Marcello Melofiro
 		schwierig.difficulty(player);
-			player.save(); // saves hp and st values of the start, if player looses in game 
+			player.save(); // speichert hp- und st-Werte des Starts (des ausgewählten Charakters)
 		
 		// Spiel 01 Phuong Uyen To
 		spiel01.wand(player);
-			player.save(); // Saves hp and st values as they are when the player just ends this minigame.
+			player.save(); // Speichert die Hp- und St-Werte so, wie sie sind, wenn der Spieler dieses Minispiel beendet het.
 			
 		//Spiel 02 Marcello Melofiro
 		spiel02.schwimm(player);
@@ -82,7 +81,7 @@ public class Hauptklasse { // Marcello Melofiro
 		spiel06.letzzteAktion(player); // Aufruf der letzten Aktion
 			player.save();
 			
-		if (player.getSchwer() == true) {
+		if (player.getSchwer() == true) { // Wenn Schwierigkeitsgrad ist Schwer, dann wird dieses Minispiel gespielt
 			
 			// Spiel 07 Emir Sultanov
 			spiel07.SchachspielInfo(); // Im Prinzip sind alle untere Zeile , die nicht "player.save();" Aufrufen der Methoden des Objectes spieol07
@@ -98,12 +97,12 @@ public class Hauptklasse { // Marcello Melofiro
 			
 		}
 		
-		if (player.getGerettet() == true) {
+		if (player.getGerettet() == true) { // Wenn Player den Charakter in der Retten Klasse gerettet hat, dann bekommt er dieses Ende
 			
 			// Ende 2 Phuong Uyen To
 			ende.ende2(player);
 			
-		} else {
+		} else { // wenn nicht, dann dieses
 			
 			// Ende 1 Phuong Uyen To
 			ende.ende1(player);

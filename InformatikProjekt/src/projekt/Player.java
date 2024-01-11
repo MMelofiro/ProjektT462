@@ -2,130 +2,130 @@ package projekt;
 
 /*
  * Player Class
- * This class is used to save all data from the player.
- * There are some useful methodes here:
- * 		getters of basically every variable in the contructor.
- * 		setters of every variable that will be changed.
- * 		statusZeigen() method. Used to show the current hp and st of the player.
- * 		save() and recover() methodes. You don't need to write the save() method anywhere, I've already done that, but the
- * 		recover() method must be written at the start of every minigame, so that if the player looses, when game restarts, the
- * 		recover() method activates, and replaces current hp and st with the saved in the save() method.
+ * Diese Klasse wird verwendet, um alle Daten des Players zu speichern.
+ * Hier gibt es einige nützliche Methoden:
+ * 		Getter für praktisch jede Variable in dieser Klasse.
+ * 		Setter jeder Variable, die geändert werden.
+ * 		statusZeigen() Methode. Zeigt die aktuellen hp und st des Spielers an.
+ * 		save() und recover() Methoden. Ihr braucht die save() Methode nirgendwo zu schreiben, das habe ich schon gemacht, aber die
+ * 		recover() Methode muss am Anfang jedes Minispiels geschrieben werden, so dass, wenn der Spieler verliert hat, und das Minispiel neu startet, die
+ * 		recover() Methode aktiviert wird und die aktuellen hp und st durch die in der save() Methode gespeicherten Werte ersetzt werden.
  */
 
 public class Player { //Marcello Melofiro
 	
-	private int hp; //Health points
-	private int st; //Stamina points
-	private String nameSpieler; //Character that the player selected
-	private String mitspieler; //Who isn't playing. If player selects Allice, then mitspieler is Jason, and viceversa.
-	private boolean gerettet; //Boolean for the ending
-	private boolean schwer; //If true, then Schachspiel wird gespielt
+	private int hp; // Trefferpunkte / Lebenspunkte
+	private int st; // Staminapunkte / Energiepunkte
+	private String nameSpieler; // Charakter, vom Spieler ausgewählt
+	private String mitspieler; // Wer nicht gespielt wird. Wenn der Spieler Allice ausgewählt hat, dann ist der Mitspieler Jason, und umgekehrt.
+	private boolean gerettet; // Boolean für das Ende
+	private boolean schwer; // Wenn true, dann Schach wird gespielt
 	
-	//-------------Checkpoint variables-------------
-	private int hpSave;
-	private int stSave;
+	//-------------Checkpoint Variablen-------------
+	private int hpSave; // Speicherplätze für hp
+	private int stSave; // Speicherplätze für st
 	
 	//-----------------------Konstruktor-----------------------
 	
 	public Player() {
 		
-		hp = 100; //Initial values
+		hp = 100; // Anfangswerte
 		st = 100;
-		gerettet = false; //Sets gerettet to false
+		gerettet = false; // Stellt gerettet auf false
 
 	}
 	
 	//-----------------------Getters-----------------------
 	
-	public int getHp() { //get the actual value of hp of the player
+	public int getHp() { // den aktuellen Wert der hp des Spielers erhalten
 		return hp;
 	}
 	
-	public int getSt() { //get the actual value of stamina of the player
+	public int getSt() { // den aktuellen Wert der st des Spielers erhalten
 		return st;
 	}
 	
-	public String getSpieler() { //get the name of the character the player selected
+	public String getSpieler() { // den Namen des Charakters erhalten, den der Spieler ausgewählt hat
 		return nameSpieler;
 	}
 	
-	public String getMitspieler() { //get name of character that is currently not played
+	public String getMitspieler() { // den Namen des Charakters erhalten, der gerade nicht gespielt wird
 		return mitspieler;
 	}
 	
-	public boolean getGerettet() { //get value of gerettet
+	public boolean getGerettet() { // Wert von gerettet erhalten
 		return gerettet;
 	}
 	
-	public boolean getSchwer() { //get value of schwer
+	public boolean getSchwer() { // Wert von schwer erhalten
 		return schwer;
 	}
 	
 	//-----------------------Setters-----------------------
 	
-	public void setHp(int health) { //this method will be used to set the hp of the player
-		hp = health;				//to a new value
-		if (hp <= 0) { //Everytime this setter is used, this "if" will check if hp is <= than 0
+	public void setHp(int health) { // diese Methode wird verwendet, um die HP des 
+		hp = health;				// Spielers auf einen neuen Wert zu stellen
+		if (hp <= 0) { // Jedes Mal, wenn dieser Setter verwendet ist, wird dieses if prüfen, ob hp <= als 0 ist
 			System.out.println(
 					"Sie haben verloren. :(\n"
 					+ "Sie spielen ab dem letzten Kontrollpunkt.");
 		}
 	}
 	
-	public void setSt(int stamina) { //this method will be used to set the stamina of the player
-		st = stamina;				 //to a new value
-		if (st <= 0) { //Everytime this setter is used, this "if" will check if st is <= than 0
+	public void setSt(int stamina) { // diese Methode wird verwendet, um die ST des 
+		st = stamina;				 // Spielers auf einen neuen Wert zu stellen
+		if (st <= 0) { // Jedes Mal, wenn dieser Setter verwendet ist, wird dieses if prüfen, ob hp <= als 0 ist
 			System.out.println(
 					"Sie haben verloren. :(\n"
 					+ "Sie spielen ab dem letzten Kontrollpunkt.");
 		}
 	}
 	
-	public void setGerettet(boolean gt) {
+	public void setGerettet(boolean gt) { // gerettet Setter
 		gerettet = gt;
 	}
 	
-	public void setSchwer(boolean schw) {
+	public void setSchwer(boolean schw) { // schwer Setter
 		schwer = schw;
 	}
 	
-	//-----------------------Player selection-----------------------
+	//-----------------------Charakter Auswahl-----------------------
 	
-	public void charakter(int wahl) { //a method with the parameter of an int
+	public void charakter(int wahl) { // eine Methode mit einem int als Parameter
 		
-		if (wahl == 1) { //the int wahl is the choice that the player made, 1 being to be Jason
+		if (wahl == 1) { // die int "wahl" ist die Wahl, die der Spieler gemacht hat, 1 ist Jason zu sein
 			
-			nameSpieler = "Jason"; //name sets to Jason
-			setHp(75); //hp sets to 75
-			setSt(125); //st sets to 125
+			nameSpieler = "Jason"; // Name wird zu Jason gestellt
+			setHp(75); // HP wird zu 75 gestellt
+			setSt(125); // ST wird zu 125 gestellt
 			
-			mitspieler = "Allice"; //name from the mitspieler sets to Allice
+			mitspieler = "Allice"; // Name mitspielers wird zu Allice gestellt
 			
-		} else if (wahl == 2) { //if player chooses 2
+		} else if (wahl == 2) { // wenn der Spieler "2" wählt 
 			
-			nameSpieler = "Allice"; //then player plays as Allice
-			setHp(100); //hp sets to 100
-			setSt(100); //st sets to 100
+			nameSpieler = "Allice"; // dann Spieler spielt als Allice
+			setHp(100); // HP wird zu 100 gestellt
+			setSt(100); // ST wird zu 100 gestellt
 			
-			mitspieler = "Jason"; //mitspieler sets to Jason
+			mitspieler = "Jason"; // Name mitspielers wird zu Jason gestellt
 			
 		}
 		
 	}
 	
-	//-----------------------Difficulty selection-----------------------
+	//-----------------------Schwierigkeitsgrad Auswahl-----------------------
 	
-	public void schwierigkeit(int wahl) { //a method with the parameter of an int
+	public void schwierigkeit(int wahl) { // eine Methode mit einem int als Parameter
 		
-		if (wahl == 1) { //the int wahl is the choice that the player made
+		if (wahl == 1) { // die int "wahl" ist die Wahl, die der Spieler gemacht hat
 			
 			setSchwer(false);
 			
 			System.out.println("Schwierigkeitsgrad auf Normal eingestellt.");
 			
-		} else if (wahl == 2) { //if player chooses 2...
+		} else if (wahl == 2) { // wenn Spieler 2 wählt...
 			
-			setSchwer(true); //...then he plays hard mode
+			setSchwer(true); // ...dann wird er auf Schwer Spielen
 			
 			System.out.println("Schwierigkeitsgrad auf Schwer eingestellt.");
 			
@@ -133,9 +133,9 @@ public class Player { //Marcello Melofiro
 		
 	}
 	
-	//-----------------------Show Stats-----------------------
+	//-----------------------Stats Zeigen-----------------------
 	
-	public void statusZeigen() { //this method is used to show the current hp and st of the player
+	public void statusZeigen() { // diese Methode wird benutzt, um die aktuellen HP und ST des Spielers zu zeigen
 		
 		System.out.println("\nLebenspunkte: " + getHp());
 		
@@ -143,20 +143,20 @@ public class Player { //Marcello Melofiro
 		
 	}
 	
-	//--------------------------------------Save and Recover methodes--------------------------------------
-	//Basically save() is a checkpoint, and recover() recovers your data as it was in the checkpoint.
+	//--------------------------------------Save und Recover Methoden--------------------------------------
+	//Kurz gesagt ist save() ein Checkpoint, und recover() stellt Ihre Daten so wieder her, wie sie im Checkpoint waren.
 	
-	public void save() { //Saves current values of hp and st
+	public void save() { // Speichert die aktuellen Werte von hp und st
 		
-		hpSave = hp; // hpSave sets to the values of hp
-		stSave = st; // same with stamina
+		hpSave = hp; // hpSave übernimmt die Werte von hp
+		stSave = st; // dasselbe mit St
 		
 	}
 	
-	public void recover () { // replaces hp and st, for hpSave, and stSave, which have the values as the last moment save() method was used.
+	public void recover () { // ersetzt hp und st, für hpSave und stSave, die die Werte des letzten Aufrufs der save() Methode haben.
 		
-		hp = hpSave; // hp sets to the values of hpSave
-		st = stSave; // yes
+		hp = hpSave; // hp übernimmt die Werte von hpSave
+		st = stSave; // genau
 
 	}
 
