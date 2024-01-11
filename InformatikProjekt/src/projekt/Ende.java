@@ -1,9 +1,9 @@
 package projekt;
 
-public class Ende {
-	
-	public void ende1(Player player) { // Phuong Uyen To
-		
+public class Ende {//Phuong Uyen To
+	Input input = new Input(); //ein Instanz erzeugen, um Input Klasse zu benutzen
+	public void ende1(Player player) { //parameter player und die klasse Player
+		//Geschichte erzahlen
 		System.out.println("Sie haben alle Herausforderungen des Spiels gemeistert und trifft den Spielveranstalter.");
 		System.out.println("Er gratuliert Ihnen und holt einen Koffer heraus, der aussieht, als ob darin ein Preisgeld enthalten wäre.");
 		input.next();
@@ -20,8 +20,8 @@ public class Ende {
 																
 	}
 	
-	public void ende2(Player player) { // Phuong Uyen To
-		
+	public void ende2(Player player) { //parameter player und die klasse Player
+		//geschichte erzahlen
 		System.out.println("Sie haben alle Herausforderungen gemeistert und trifft den Spielveranstalter.");
 		System.out.println("Er gratuliert Ihnen und holt einen Koffer heraus, der aussieht, als ob darin ein Preisgeld enthalten wäre.");
 		input.next();
