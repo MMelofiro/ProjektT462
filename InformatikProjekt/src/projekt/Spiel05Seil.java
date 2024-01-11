@@ -2,12 +2,12 @@ package projekt;
 
 public class Spiel05Seil { // Phuong Uyen To
 
-	Input input = new Input();
+	Input input = new Input();//ein Instanz erzeugen, um Input Klasse zu benutzen
 
 	public void Seilschwingen(Player player) {
 		
-		player.recover();
-		input.next();
+		player.recover();//Erhalten zuvor gespeicherte HP und ST zurück
+		input.next();//die method next wird benutzt, um darauf zu warten, dass der Spieler die Eingabetaste drückt, um die Zeile zu ändern
 		System.out.println("Seilschwingen");
 
 		//Anweisung
@@ -51,15 +51,15 @@ public class Spiel05Seil { // Phuong Uyen To
 			player.statusZeigen(); //aktuelle HP und ST anzeigen
 			
 			if (player.getHp() <= 0 || player.getSt() < 0) {
-				Seilschwingen(player); //noch einmal spielen wenn HP oder ST 0 ist
+				Seilschwingen(player); //das Spiel wird wiedergeholt wenn HP oder ST kleiner oder gleich 0 sind
 				break;// Schleife abbrechen
 			
-			} else {
+			} else {//wenn hp und st noch grosser als 0 sind, dann kann der Spieler noch mal versuchen
 			
 				System.out.println("Sie holen das Seil und versuchen noch einmal.");
 				
 				vSpieler = input.scannerDouble(
-						"Geben Sie die erforderliche Geschwindigkeit zum Schwingen des Seils ein (in m/s): ");// wenn HP und ST bleiben noch ubrig, dann kann der Spier noch einmal entscheiden
+						"Geben Sie die erforderliche Geschwindigkeit zum Schwingen des Seils ein (in m/s): ");//noch einmal die geschwindigkeit geben
 																												
 			}
 		
@@ -69,7 +69,7 @@ public class Spiel05Seil { // Phuong Uyen To
 			
 			System.out.println("Herzlichen Glückwunsch! Sie haben die andere Seite erreicht.");
 			
-			if (player.getSt() > 15) {
+			if (player.getSt() > 15) {//falls st grosser als 15, dann wird es reduziert auf 15(mude ist)
 				
 				player.setSt(15);
 			
