@@ -18,6 +18,7 @@ public class Spiel03Polar { // Emir Sultanov
        player.recover();  // die (HP) und (ST) des Spielers auffüllt, wie es vorher gespeichert wurde
        if (player.getSt() < 15) { // Wenn Spieler ST benötigt, wird er mehrere zusätzliche ST bekommen
        	System.out.println("Sie haben erst sich erholt, bevor weiter zu gehen");
+	player.setSt(player.getSt() +15 ); // ST wird um 15 gestiegen
         player.statusZeigen(); // Aufruf zur Methode Es wird die Lebenspunkte hp und stamina Ausdauerpunkte gezeigt
        }
       
