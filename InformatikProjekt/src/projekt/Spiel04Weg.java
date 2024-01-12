@@ -1,6 +1,6 @@
 package projekt;
 
-public class Spiel04Weg {
+public class Spiel04Weg {//Phuong Uyen To
 
 	Input input = new Input(); // ein Instanz erzeugen, um Input Klasse zu benutzen
 
