@@ -52,7 +52,7 @@ public class Spiel06Plattform { // Emir Sultanov
                 player.setHp(player.getHp() - 15);  // Wenn Eingabe des Spielers nicht 3 ist, HP wird um 15 sich verringert
                 player.setSt(player.getSt() - 15); //  Wenn Eingabe des Spielers nicht 3 ist, ST wird um 15 sich verringert
                 player.statusZeigen(); // Aufruf zur Methode Es wird die Lebenspunkte hp und stamina Ausdauerpunkte gezeigt
-                System.out.println("Die Plattform gibt unter Ihnen nach und Sie stürzen in die Tiefe. Aber Sie lassen sich nicht entmutigen und klettern wieder hoch, bereit, es erneut zu versuchen.");
+               
 
 
                 if (player.getHp() <= 0 || player.getSt() <= 0) { // Wenn der Spieler keine HP oder ST mehr hat, wird eine Meldung ausgegeben.
@@ -60,7 +60,9 @@ public class Spiel06Plattform { // Emir Sultanov
                     ersteAktion(player); // Aufforderung des Spieles ersteAktion nochmal machen vom Anfang
                     break; // Ende der Schleife
 
-                }
+                } else {
+			 System.out.println("Die Plattform gibt unter Ihnen nach und Sie stürzen in die Tiefe. Aber Sie lassen sich nicht entmutigen und klettern wieder hoch, bereit, es erneut zu versuchen.");
+		}
             } else {
               
                     System.out.println("Richtig! Sie haben erste Plattform übersprungen. Sie haben zwar einige Ausdauerpunkte verloren. ");
@@ -89,7 +91,7 @@ public class Spiel06Plattform { // Emir Sultanov
                     player.setHp(player.getHp() - 15);  // Wenn Eingabe des Spielers nicht 1 ist, HP wird um 15 sich verringert
                     player.setSt(player.getSt() - 15); //  Wenn Eingabe des Spielers nicht 1 ist, ST wird um 15 sich verringert
                     player.statusZeigen(); // Aufruf zur Methode Es wird die Lebenspunkte hp und stamina Ausdauerpunkte gezeigt
-                    System.out.println("Probieren Sie es noch einmal.");
+                
 
                     if (player.getHp() <= 0 || player.getSt() <= 0) { //  dann wird überprüft ob er noch ST und HP hat
                     	System.out.println("Sie sind stark gestürzt,da die Plattforme nicht stabil war ");
@@ -98,7 +100,9 @@ public class Spiel06Plattform { // Emir Sultanov
                         letzzteAktion(player);
                         break;// Prufen, ob alle HP oder ST verlieren sind
 
-                    }
+                    } else {
+			     System.out.println("Die Plattform gibt unter Ihnen nach und Sie stürzen in die Tiefe. Aber Sie lassen sich nicht entmutigen und klettern wieder hoch, bereit, es erneut zu versuchen.");
+		    }
                 } else {
                      // Wenn benutzer richtie Ans also 1 Gewählt hat, dann wird überprüft ob er noch ST hat
                         System.out.println("Richtig! Sie haben zweitere Plattform übersprungen. Sie haben zwar einige Ausdauerpunkte verloren.Machen Sie ruhig Pause ");
@@ -133,7 +137,7 @@ public class Spiel06Plattform { // Emir Sultanov
                     player.setHp(player.getHp() - 15);  // Wenn Eingabe des Spielers nicht 1 ist, HP wird um 15 sich verringert
                     player.setSt(player.getSt() - 15); //  Wenn Eingabe des Spielers nicht 1 ist, ST wird um 15 sich verringert
                     player.statusZeigen(); // Aufruf zur Methode Es wird die Lebenspunkte hp und stamina Ausdauerpunkte gezeigt
-                    System.out.println("Probieren Sie es noch einmal.");
+                   
                     
 
                     if (player.getHp() <= 0 || player.getSt() <= 0) { // Wenn benutzer richtie Ans also 1 Gewählt hat, dann wird überprüft ob er noch ST und HP hat
@@ -142,7 +146,7 @@ public class Spiel06Plattform { // Emir Sultanov
                         mittlereAktion(player); // Das Spiel wird vom Anfang wieder gespielt, wenn HP oder ST <= sind
                         letzzteAktion(player);
                         break;// Ende der Schleife
-                    }
+                    } else {  System.out.println("Die Plattform gibt unter Ihnen nach und Sie stürzen in die Tiefe. Aber Sie lassen sich nicht entmutigen und klettern wieder hoch, bereit, es erneut zu versuchen."); }
 
                 } else {
                     
