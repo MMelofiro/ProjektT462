@@ -9,8 +9,6 @@ public class Spiel05Seil { // Phuong Uyen To
 		player.recover();//Erhalten zuvor gespeicherte HP und ST zurück
 		input.next();//die method next wird benutzt, um darauf zu warten, dass der Spieler die Eingabetaste drückt, um die Zeile zu ändern
 		System.out.println("Seilschwingen");
-		
-		player.statusZeigen(); //aktuelle HP und ST anzeigen
 
 		//Anweisung
 		System.out.println("Nach der kurzen Erholung in letzte Herausforderung, gehen Sie zu dem Ort, an dem die 5. Herausforderung stattfindet");
@@ -35,18 +33,25 @@ public class Spiel05Seil { // Phuong Uyen To
 		v = Math.round(v);
 		v = v / 100; // Diese letzten 3 Zeilen runden Zahlen auf 2 Dezimalstellen.
 		
-		System.out.println("Um die andere Seite zu erreichen, müssen Sie das Seil mit der richtigen Geschwindigkeit schwingen."); 
-		System.out.println("Die Gravitationskonstante ist 9.8m/s^2. Die Höhe ist "+ hohe + ". v = 2h/g =");
+		System.out.println(
+				"Um die andere Seite zu erreichen, müssen Sie das Seil mit der richtigen "
+				+ "Geschwindigkeit schwingen. Die Gravitationskonstante ist 9.8m/s^2. Die Höhe ist "
+				+ hohe + ". v = 2h/g =");
 																								
 		// Spielereingabe für die Geschwindigkeit mithilfe der method scannerdouble
 		double vSpieler = input.scannerDouble("Geben Sie die erforderliche Geschwindigkeit zum Schwingen des Seils ein (in m/s): ");
 		
-		while (vSpieler < v) { // 2 ergebnisse vergleichen
-		
+		while (vSpieler < v||vSpieler>30) { // 2 ergebnisse vergleichen, 2 falle v nicht richtig ist
+			while (vSpieler>30) { //Anstatt eine sehr große Zahl einzugeben und sofort zu passen, muss der Spieler berechnen
+				//wenn vspieler zu gross ist, fuhren immer diese Anweisungen
+				System.out.println("Die Geschwindigkeit ist zu gross. Bitte geben Sie eine genauere Zahl ein.");
+				vSpieler = input.scannerDouble("Geben Sie die erforderliche Geschwindigkeit zum Schwingen des Seils ein (in m/s): ");//spieler kann nochmals vspieler eingeben
+			}
+			while (vSpieler<v) {//wenn vspieler noch kleiner als v ist, dann fuhren immer diese Anweisungen
 			System.out.println("Die Geschwindigkeit ist nicht ausreichend. Das Seil schwingt nicht weit genug. Du bist hinterfallen.");
 			System.out.println("Sie müssen zurückgehen, um das Seil zu holen, und verlieren dabei viel HP und ST");
-			player.setHp(player.getHp() - 20); //HP und ST werden reduziert
-			player.setSt(player.getSt() - 20);
+			player.setHp(player.getHp() - 50); //HP und ST werden reduziert
+			player.setSt(player.getSt() - 50);
 			input.next();
 			player.statusZeigen(); //aktuelle HP und ST anzeigen
 			
@@ -62,21 +67,20 @@ public class Spiel05Seil { // Phuong Uyen To
 						"Geben Sie die erforderliche Geschwindigkeit zum Schwingen des Seils ein (in m/s): ");//noch einmal die geschwindigkeit geben
 																												
 			}
-		
+			}
 		}
-		
+	
 		if (vSpieler >= v) {// wenn die Geschwindigkeit ausreichend ist, dann erfolgreich
 			
 			System.out.println("Herzlichen Glückwunsch! Sie haben die andere Seite erreicht.");
 			
-			if (player.getSt() > 50) {//falls st grosser als 15, dann wird es reduziert auf 15(mude ist)
+			if (player.getSt() > 60) {//falls st grosser als 15, dann wird es reduziert auf 15(mude ist)
 				
-				player.setSt(50);
+				player.setSt(60);
 			
 			}
-			
+			player.statusZeigen(); //aktuelle HP und ST anzeigen
 		}
 	
 	}
-
 }
