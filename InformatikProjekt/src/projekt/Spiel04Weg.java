@@ -98,15 +98,15 @@ public class Spiel04Weg {
 					System.out.println("Nach dem Essen stellen Sie 10 HP wieder her!");
 					player.setHp(player.getHp() + 10);
 
-				} else {// sonst kann er auch die herausforderung uberwinden, aber verliert HP
-					player.setHp(player.getHp() - 10);
-					if (player.getHp() < 0) {
-						weg(player);// das Spielt wird wiedergeholt wenn HP<0
-					} else
-						System.out.println("Sie sind ihnen erfolgreich entkommen, verlieren jedoch 10 HP.");
-				}
-
+				} 
+			}else {// sonst kann er auch die herausforderung uberwinden, aber verliert HP
+				player.setHp(player.getHp() - 10);
+				if (player.getHp() < 0) {
+					weg(player);// das Spielt wird wiedergeholt wenn HP<0
+				} else
+					System.out.println("Sie sind ihnen erfolgreich entkommen, verlieren jedoch 10 HP.");
 			}
+
 
 		}
 		
