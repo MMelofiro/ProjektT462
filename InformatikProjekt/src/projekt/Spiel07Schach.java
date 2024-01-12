@@ -151,7 +151,7 @@ public class Spiel07Schach { // Emir Sultanov
                ernuerungSchachbrett3(schachbrett);  // Aufruf der Methode zum Anzeigen des aktualistirten Schachbrett mit den neuen Positionen
                System.out.println("Schachmatt! Herzliche Glückwunsche! Sie haben erfoglreich das Spiel beendet  ");
            }
-       } while (ans != 4); // Wird solange ausgefuhrt, wenn ans nicht gleich 2 
+       } while (ans != 4); // Wird solange ausgefuhrt, wenn ans nicht gleich 4 
 
    }
 
