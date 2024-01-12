@@ -60,7 +60,7 @@ public class Spiel04Weg { //Phuong Uyen To
 						"Sie beschließen zu essen, nachdem Sie sichergestellt haben, dass es nicht giftig ist.");
 				input.next();
 				input.fixNext();
-				System.out.println("Nach dem Essen stellen Sie 10  wieder her!");
+				System.out.println("Nach dem Essen stellen Sie 10 HP wieder her!");
 				player.setHp(player.getHp() + 10);
 
 			}
