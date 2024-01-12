@@ -56,7 +56,7 @@ public class Spiel05Seil { // Phuong Uyen To
 			input.next();
 			player.statusZeigen(); //aktuelle HP und ST anzeigen
 			
-			if (player.getHp() <= 0 || player.getSt() < 0) {
+			if (player.getHp() < 0 || player.getSt() < 0) {
 				Seilschwingen(player); //das Spiel wird wiedergeholt wenn HP oder ST kleiner oder gleich 0 sind
 				break;// Schleife abbrechen
 			
