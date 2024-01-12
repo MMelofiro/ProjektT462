@@ -146,7 +146,7 @@ public class Spiel07Schach { // Emir Sultanov
                    SchachspielAktion2(player,schachbrett);
 
                    break; // Ende der Schleife
-               } else System.out.println("Probieren Sie es noch einmal.");
+               } else { System.out.println("Probieren Sie es noch einmal.");
            } else {
                ernuerungSchachbrett3(schachbrett);  // Aufruf der Methode zum Anzeigen des aktualistirten Schachbrett mit den neuen Positionen
                System.out.println("Schachmatt! Herzliche Glückwunsche! Sie haben erfoglreich das Spiel beendet  ");
