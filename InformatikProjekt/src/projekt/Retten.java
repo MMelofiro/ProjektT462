@@ -7,7 +7,6 @@ public class Retten { // Phuong Uyen To
 	public void retten(Player player) {// parameter player und die klasse Player
 		
 		player.recover(); //Erhalten zuvor gespeicherte HP und ST zurück
-		player.statusZeigen(); //aktuelle HP und ST anzeigen
 
 		// Geschichte erzahlen
 		System.out.println("Gerade als Sie die andere erreichen, hören Sie von hinten einen Ruf: „Hilf mir!“");
