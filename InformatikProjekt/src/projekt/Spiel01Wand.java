@@ -37,7 +37,7 @@ public class Spiel01Wand { // Phuong Uyen To
 			input.fixNext();
 			player.setHp(player.getHp() - 10);//Hp wird reduziert 
 			player.setSt(player.getSt() - 10);//ST wird reduziert 
-			if (player.getHp() > 0 && player.getSt() > 0) { // Prufen, ob alle HP oder ST verloren sind
+			if (player.getHp() > 0 || player.getSt() > 0) { // Prufen, ob alle HP oder ST verloren sind
 				player.statusZeigen(); //ST und Hp anzeigen durch die Method statusZeigen 
 				input.next();
 				System.out.println("Noch einmal versuchen");
@@ -58,7 +58,7 @@ public class Spiel01Wand { // Phuong Uyen To
 			
 			player.setSt(player.getSt() - 10); //ST wird reduziert 
 			
-			if ((player.getHp() > 0) && (player.getSt() > 0)) { //uberprufen, ob der Spieler noch HP und ST hat
+			if ((player.getHp() > 0) || (player.getSt() > 0)) { //uberprufen, ob der Spieler noch HP und ST hat
 				System.out.println("Sie haben ein Loch unter der Wand gegraben und damit auf andere Seite gekommen");
 				System.out.println("Erfolgreich! Sie sind an der Tür, die zum nächsten Spiel führt, angekommen.");
 				
