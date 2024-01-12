@@ -47,7 +47,7 @@ public class Ende { //Phuong Uyen To
 		System.out.println(
 				"Sie möchten ein Signal an die Polizei senden und so tun, als würden Sie verhandeln, um Zeit zu gewinnen.");
 		input.next();
-		System.out.println("Aber " + player.getMitspieler() + "hat sich aufgehalten.");
+		System.out.println("Aber " + player.getMitspieler() + " hat sich aufgehalten.");
 		System.out.println(player.getMitspieler() + " ist ein Mitglied der Organisation.");
 		input.next();
 		System.out.println("Sie wurden getötet.");
