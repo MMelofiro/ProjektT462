@@ -7,10 +7,10 @@ public class Spiel07Schach { // Emir Sultanov
    public  void SchachspielInfo() {  // methode für Einführung in Spiel , information für den Spieler
        System.out.println("Sie befinden sich im Schachspielsraum. Es gibt ein großes Schachbrett 8x8 m² mit den Figuren , " +
                "Jede Schachfigur wiegt etwa 15-30kg.");
-       this.input.next(); // Benutzer Eingabe , dadurch dass er klickt oder etwas eingibt, geht er zu den nächsten Info Printanweisung
+       input.next(); // Benutzer Eingabe , dadurch dass er klickt oder etwas eingibt, geht er zu den nächsten Info Printanweisung
        System.out.println("Sie müssen nur 2 zum Gewinn führende Züge finden, bzw diese Figuren auf richtige" +
                "Stellen platzieren. Sie dürfen nur 2 Züge, ohne dass HP und ST zu verlieren, ausführen.");
-       this.input.next();
+       input.next();
        System.out.println("BSP Züg. Le4 - Läufer geht auf e4 Position.");
 
    }
@@ -60,10 +60,24 @@ public class Spiel07Schach { // Emir Sultanov
 
 
    }
+   public void SchachStatusKontrolle (Player player) {
+	   player.recover(); // die (HP) und (ST) des Spielers auffüllt, wie es vorher gespeichert wurde
+       
+	      
+       if (player.getSt() < 20 || player.getHp() < 20) { // Wenn Spieler ST benötigt, wird er mehrere zusätzliche ST bekommen
+           System.out.println("Sie spüren eine Welle der Erholung durch Ihren Körper fließen.");
+           player.setSt(player.getSt() +20 ); 
+           player.setHp(player.getHp() +20 ); 
+       }
+       else {
+           System.out.println("Sie atmen tief durch und fühlen sich  mehrer erfrischt.");
+           player.setSt(player.getSt() +10 ); // Ansonsten bekommt er etwas weniger
+       }
+   }
    public  void SchachspielAktion(Player player,char[][] schachbrett) { // Erste Eingabe des Spielers, Methode mit den Parametern Player und schachbrett
-
-       player.recover(); // die (HP) und (ST) des Spielers auffüllt, wie es vorher gespeichert wurde
-
+	   
+	
+	   
        int ans; // eine Variable namens deklariert die später verwendet wird, um die Antwort des Spielers zu speichern
 
        System.out.println("Wählen und geben Sie bitte den ersten Zug für die weißen Figuren  an: (1-4)");
@@ -85,21 +99,25 @@ public class Spiel07Schach { // Emir Sultanov
 
                if (player.getHp() <= 0 || player.getSt() <= 0) { // Wenn der Spieler keine HP oder ST mehr hat, wird eine Meldung ausgegeben.
 
-                   System.out.println("Sie waren nah am Gewinn, aber nächstes Mal schaffen Sie es! :) ");
-
-                   this.SchachspielAktion(player,schachbrett); // Aufforderung des Spieles SchachAktion nochmal machen vom Anfang
+                   System.out.println("Der Zug war falsch, der Schachmatt ist somit in 2 Zügen nicht möglich, probieren Sie noch ");
+                   
+                   SchachStatusKontrolle(player); // Spieler bekommt Unterstutzung,falls HP und ST ausgegangen sind
+                   
+                   SchachspielAktion(player,schachbrett);
+                   
+                   SchachspielAktion2(player,schachbrett);// Aufforderung des Spieles SchachAktion nochmal machen vom Anfang
 
                    break; // Ende der Schleife
                }
            } else {
                erneuerungSchachbrett(schachbrett); // Aktualisieren  Schachbrett mit der neuen Position
            }
-       } while (ans != 2 && player.getHp() > 0 && player.getSt() > 0); // Wird solange ausgefuhrt, wenn ans nicht gleich 2 UND Spieler hat noch ST HP
+       } while (ans != 2); // Wird solange ausgefuhrt, wenn ans nicht gleich 2
 
        player.statusZeigen();
    }
 
-   public  void SchachspielAktion2(Player player, char[][] schachbrett) { // Zweite Eingabe des Spielers, Methode mit den Parametern Player und ein schachbrett
+   public void SchachspielAktion2 (Player player, char[][] schachbrett) { // Zweite Eingabe des Spielers, Methode mit den Parametern Player und ein schachbrett
 
        System.out.println("Schwarzer König geht zur einzigen möglichen Position b8");
 
@@ -119,9 +137,15 @@ public class Spiel07Schach { // Emir Sultanov
                System.out.println("Probieren Sie es noch einmal.");
                if (player.getHp() <= 0 || player.getSt() <= 0) { // Wenn der Spieler keine HP oder ST mehr hat, wird eine Meldung ausgegeben.
 
-                   System.out.println("Sie waren nah am Gewinn, aber nächstes Mal schaffen Sie es! :) ");
-
-                   this.SchachspielAktion2(player,schachbrett); // Aufforderung des Spieles SchachAktion nochmal machen vom Anfang
+                   System.out.println("Sie haben die falschen Figure verschoben, somit sie ihren Rücken beschädet haben und sie brauchen Erholung ");
+                   
+                   SchachStatusKontrolle(player); // Spieler bekommt Unterstutzung,falls HP und ST ausgegangen sind
+                   
+                   SchachspielAktion(player,schachbrett); // Aufforderung des Spieles SchachAktion nochmal machen vom Anfang
+                   
+                   erneuerungSchachbrett(schachbrett);
+                   
+                   SchachspielAktion2(player,schachbrett);
 
                    break; // Ende der Schleife
                }
@@ -129,7 +153,7 @@ public class Spiel07Schach { // Emir Sultanov
                ernuerungSchachbrett3(schachbrett);  // Aufruf der Methode zum Anzeigen des aktualistirten Schachbrett mit den neuen Positionen
                System.out.println("Schachmatt! Herzliche Glückwunsche! Sie haben erfoglreich das Spiel beendet  ");
            }
-       } while (ans != 4 && player.getHp() > 0 && player.getSt() > 0); // Wird solange ausgefuhrt, wenn ans nicht gleich 2 UND Spieler hat noch ST HP
+       } while (ans != 4); // Wird solange ausgefuhrt, wenn ans nicht gleich 2 
 
    }
 
