@@ -50,8 +50,8 @@ public class Spiel05Seil { // Phuong Uyen To
 			while (vSpieler<v) {//wenn vspieler noch kleiner als v ist, dann fuhren immer diese Anweisungen
 			System.out.println("Die Geschwindigkeit ist nicht ausreichend. Das Seil schwingt nicht weit genug. Du bist hinterfallen.");
 			System.out.println("Sie müssen zurückgehen, um das Seil zu holen, und verlieren dabei viel HP und ST");
-			player.setHp(player.getHp() - 50); //HP und ST werden reduziert
-			player.setSt(player.getSt() - 50);
+			player.setHp(player.getHp() - 20); //HP und ST werden reduziert
+			player.setSt(player.getSt() - 20);
 			input.next();
 			player.statusZeigen(); //aktuelle HP und ST anzeigen
 			
