@@ -95,8 +95,6 @@ public class Spiel07Schach { // Emir Sultanov
                player.setSt(player.getSt() - 15); //  Wenn Eingabe des Spielers nicht 2 ist, ST wird um 15 sich verringert
                player.statusZeigen(); // Aufruf zur Methode Es wird die Lebenspunkte hp und stamina Ausdauerpunkte gezeigt
 
-               System.out.println("Probieren Sie es noch einmal.");
-
                if (player.getHp() <= 0 || player.getSt() <= 0) { // Wenn der Spieler keine HP oder ST mehr hat, wird eine Meldung ausgegeben.
 
                    System.out.println("Der Zug war falsch, der Schachmatt ist somit in 2 Zügen nicht möglich, probieren Sie noch ");
@@ -108,7 +106,7 @@ public class Spiel07Schach { // Emir Sultanov
                    SchachspielAktion2(player,schachbrett);// Aufforderung des Spieles SchachAktion nochmal machen vom Anfang
 
                    break; // Ende der Schleife
-               }
+               } else    System.out.println("Probieren Sie es noch einmal.");
            } else {
                erneuerungSchachbrett(schachbrett); // Aktualisieren  Schachbrett mit der neuen Position
            }
@@ -134,7 +132,7 @@ public class Spiel07Schach { // Emir Sultanov
                player.setHp(player.getHp() - 15); // Wenn Eingabe des Spielers nicht 4 ist, HP wird um 15 sich verringert
                player.setSt(player.getSt() - 15); //  Wenn Eingabe des Spielers nicht 4 ist, ST wird um 15 sich verringert
                player.statusZeigen();  // Aufruf zur Methode Es wird die Lebenspunkte hp und stamina Ausdauerpunkte gezeigt
-               System.out.println("Probieren Sie es noch einmal.");
+   
                if (player.getHp() <= 0 || player.getSt() <= 0) { // Wenn der Spieler keine HP oder ST mehr hat, wird eine Meldung ausgegeben.
 
                    System.out.println("Sie haben die falschen Figure verschoben, somit sie ihren Rücken beschädet haben und sie brauchen Erholung ");
@@ -148,7 +146,7 @@ public class Spiel07Schach { // Emir Sultanov
                    SchachspielAktion2(player,schachbrett);
 
                    break; // Ende der Schleife
-               }
+               } else System.out.println("Probieren Sie es noch einmal.");
            } else {
                ernuerungSchachbrett3(schachbrett);  // Aufruf der Methode zum Anzeigen des aktualistirten Schachbrett mit den neuen Positionen
                System.out.println("Schachmatt! Herzliche Glückwunsche! Sie haben erfoglreich das Spiel beendet  ");
